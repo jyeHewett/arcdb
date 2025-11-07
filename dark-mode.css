@@ -1,0 +1,39 @@
+:root{
+  --bg: #ffffff;
+  --text: #111827;
+  --muted: #6b7280;
+  --border: #e6e6e6;
+  --header-bg: #ffffff;
+  --table-bg: #ffffff;
+  --input-bg: #fff;
+  --input-border: #ddd;
+  --link: #0a84ff;
+  --tick: #10b981;
+  --cross: #ef4444;
+  --code-bg: #f3f4f6;
+}
+.dark{
+  --bg: #0b1220;
+  --text: #e6eef6;
+  --muted: #9aa6b2;
+  --border: #1f2a37;
+  --header-bg: #071122;
+  --table-bg: #071422;
+  --input-bg: #0b1622;
+  --input-border: #20303f;
+  --link: #6cc6ff;
+  --tick: #6ee7b7;
+  --cross: #ff8b8b;
+  --code-bg: #0f1724;
+}
+/* Basic page scaffolding to match SPA look */
+html,body{background:var(--bg);color:var(--text);}
+body{font-family:system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;max-width:1200px;margin:2rem auto;padding:0 1rem}
+.site-header h1{margin:0}
+.subtitle{color:var(--muted)}
+a{color:var(--link)}
+table{background:var(--table-bg)}
+th,td{border:1px solid var(--border)}
+.privacy-panel{background:var(--table-bg);border:1px solid var(--border)}
+/* Floating theme toggle (the button inserted by the JS uses these vars) */
+.dark-toggle{position:fixed;right:12px;top:12px;z-index:9999;padding:0.4rem 0.6rem;border-radius:8px;border:1px solid var(--border);background:var(--header-bg);color:var(--text);cursor:pointer}
