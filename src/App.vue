@@ -17,6 +17,51 @@ function toggleTheme() {
   saveTheme(isDark.value)
 }
 
+// Support both the original crafts.json shape and a compacted one.
+// Compact form example:
+// { "angled-grip-i": { "d": "Angled Grip I", "n": [["Plastic Parts",6],["Duct Tape",1]], "needed_in": [...] } }
+function normalizeCrafts(raw) {
+  const out = {}
+  for (const [key, val] of Object.entries(raw || {})) {
+    if (!val) { out[key] = val; continue }
+    const obj = {}
+    // display name: prefer full `display_name`, fall back to compact `d` or derive from key
+    obj.display_name = val.display_name || val.d || key.replace(/[-_]/g, ' ').replace(/\b\w/g, c => c.toUpperCase())
+    // needed_in may be present; keep as-is (support compact 'ni' too)
+    obj.needed_in = val.needed_in || val.ni || val.neededIn || []
+    // normalize 'needs' — support compact 'n' format (array of [name, qty])
+    if (Array.isArray(val.n)) {
+      obj.needs = val.n.map(it => Array.isArray(it) ? { name: it[0], quantity: it[1] } : it)
+    } else {
+      obj.needs = val.needs || []
+    }
+    out[key] = obj
+  }
+  return out
+}
+
+// Normalize data.json entries to the long form expected by the UI.
+// Support compact keys:
+// n -> Name, r -> Rarity, rt -> Recycles To, sp -> Sell Price, c -> Category,
+// k -> Keep for Quests/Workshop, nf -> needed_for
+function normalizeData(raw) {
+  if (!Array.isArray(raw)) return raw
+  return raw.map(item => {
+    // if already long-form (has Name) return as-is
+    if (item.Name) return item
+    const out = {}
+    out['Name'] = item.n || item.Name || ''
+    if (item.r !== undefined) out['Rarity'] = item.r
+    else if (item.Rarity !== undefined) out['Rarity'] = item.Rarity
+    out['Recycles To'] = item.rt !== undefined ? item.rt : item['Recycles To']
+    out['Sell Price'] = item.sp !== undefined ? item.sp : item['Sell Price']
+    out['Category'] = item.c !== undefined ? item.c : item['Category']
+    out['Keep for Quests/Workshop'] = item.k !== undefined ? item.k : item['Keep for Quests/Workshop']
+    out['needed_for'] = item.nf !== undefined ? item.nf : item.needed_for || item.neededFor
+    return out
+  })
+}
+
 const items = ref([])
 const columns = ref([])
 const error = ref(null)
@@ -27,20 +72,15 @@ async function loadData() {
     // use Vite's runtime base so the request resolves correctly on GitHub Pages
     const base = import.meta.env.BASE_URL || '/'
 
-    // load main items data
-    const res = await fetch(`${base}data.json`)
-    if (!res.ok) throw new Error(`HTTP ${res.status}`)
-    const data = await res.json()
+  // load main items data
+  const res = await fetch(`${base}data.json`)
+  if (!res.ok) throw new Error(`HTTP ${res.status}`)
+  const rawData = await res.json()
+  const data = normalizeData(rawData)
 
-    // try to load crafts metadata (we use this to show which crafts need each item)
-    let crafts = {}
-    try {
-      const cres = await fetch(`${base}crafts.json`)
-      if (cres.ok) crafts = await cres.json()
-    } catch (e) {
-      // non-fatal; we'll still render the table without the "Needed For" column
-      console.warn('could not load crafts.json', e)
-    }
+    // crafts.json is no longer required at runtime — `needed_for` is baked into data.json at build time.
+    // Keep `crafts` empty so the client falls back to generating display names from craft keys.
+    const crafts = {}
 
     // build a lookup: normalized item name -> array of parent display names
     const norm = s => String(s || '').toLowerCase().replace(/[^a-z0-9]+/g, '')
