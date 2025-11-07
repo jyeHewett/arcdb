@@ -1,0 +1,2334 @@
+{
+  "advanced-electrical-components": {
+    "display_name": "Advanced Electrical Components",
+    "needs": [
+      {
+        "name": "Wires",
+        "quantity": 3
+      },
+      {
+        "name": "Electrical Components",
+        "quantity": 2
+      }
+    ]
+  },
+  "advanced-mechanical-components": {
+    "display_name": "Advanced Mechanical Components",
+    "needs": [
+      {
+        "name": "Steel Spring",
+        "quantity": 2
+      },
+      {
+        "name": "Mechanical Components",
+        "quantity": 2
+      }
+    ]
+  },
+  "adrenaline-shot": {
+    "display_name": "Adrenaline Shot",
+    "needs": [
+      {
+        "name": "Plastic Parts",
+        "quantity": 3
+      },
+      {
+        "name": "Chemicals",
+        "quantity": 3
+      }
+    ]
+  },
+  "agave-juice": {
+    "display_name": "Agave Juice",
+    "needs": [
+      {
+        "name": "Agave",
+        "quantity": 1
+      },
+      {
+        "name": "Empty Wine Bottle",
+        "quantity": 1
+      }
+    ]
+  },
+  "angled-grip-i": {
+    "display_name": "Angled Grip I",
+    "needs": [
+      {
+        "name": "Plastic Parts",
+        "quantity": 6
+      },
+      {
+        "name": "Duct Tape",
+        "quantity": 1
+      }
+    ]
+  },
+  "angled-grip-ii": {
+    "display_name": "Angled Grip II",
+    "needs": [
+      {
+        "name": "Mechanical Components",
+        "quantity": 1
+      },
+      {
+        "name": "Duct Tape",
+        "quantity": 1
+      }
+    ]
+  },
+  "antiseptic": {
+    "display_name": "Antiseptic",
+    "needs": [
+      {
+        "name": "Chemicals",
+        "quantity": 10
+      },
+      {
+        "name": "Great Mullein",
+        "quantity": 2
+      }
+    ]
+  },
+  "anvil-ii": {
+    "display_name": "Anvil II",
+    "needs": [
+      {
+        "name": "Anvil I",
+        "quantity": 1
+      },
+      {
+        "name": "Mechanical Components",
+        "quantity": 3
+      },
+      {
+        "name": "Simple Gun Parts",
+        "quantity": 1
+      }
+    ]
+  },
+  "anvil-i": {
+    "display_name": "Anvil I",
+    "needs": [
+      {
+        "name": "Mechanical Components",
+        "quantity": 5
+      },
+      {
+        "name": "Simple Gun Parts",
+        "quantity": 6
+      },
+      {
+        "name": "Anvil Blueprint",
+        "quantity": 1
+      }
+    ]
+  },
+  "anvil-iii": {
+    "display_name": "Anvil III",
+    "needs": [
+      {
+        "name": "Anvil II",
+        "quantity": 1
+      },
+      {
+        "name": "Mechanical Components",
+        "quantity": 4
+      },
+      {
+        "name": "Heavy Gun Parts",
+        "quantity": 1
+      }
+    ]
+  },
+  "anvil-iv": {
+    "display_name": "Anvil IV",
+    "needs": [
+      {
+        "name": "Mechanical Components",
+        "quantity": 4
+      },
+      {
+        "name": "Heavy Gun Parts",
+        "quantity": 1
+      },
+      {
+        "name": "Anvil III",
+        "quantity": 1
+      }
+    ]
+  },
+  "arc-circuitry": {
+    "display_name": "ARC Circuitry",
+    "needs": [
+      {
+        "name": "ARC Alloy",
+        "quantity": 6
+      }
+    ]
+  },
+  "arc-motion-core": {
+    "display_name": "ARC Motion Core",
+    "needs": [
+      {
+        "name": "ARC Alloy",
+        "quantity": 6
+      }
+    ]
+  },
+  "arpeggio-i": {
+    "display_name": "Arpeggio I",
+    "needs": [
+      {
+        "name": "Mechanical Components",
+        "quantity": 6
+      },
+      {
+        "name": "Simple Gun Parts",
+        "quantity": 6
+      }
+    ]
+  },
+  "arpeggio-iii": {
+    "display_name": "Arpeggio III",
+    "needs": [
+      {
+        "name": "Arpeggio II",
+        "quantity": 1
+      },
+      {
+        "name": "Metal Parts",
+        "quantity": 10
+      },
+      {
+        "name": "Simple Gun Parts",
+        "quantity": 4
+      }
+    ]
+  },
+  "arpeggio-iv": {
+    "display_name": "Arpeggio IV",
+    "needs": [
+      {
+        "name": "Mechanical Components",
+        "quantity": 1
+      },
+      {
+        "name": "Medium Gun Parts",
+        "quantity": 2
+      },
+      {
+        "name": "Arpeggio III",
+        "quantity": 1
+      }
+    ]
+  },
+  "arpeggio-ii": {
+    "display_name": "Arpeggio II",
+    "needs": [
+      {
+        "name": "Arpeggio I",
+        "quantity": 1
+      },
+      {
+        "name": "Metal Parts",
+        "quantity": 14
+      },
+      {
+        "name": "Simple Gun Parts",
+        "quantity": 3
+      }
+    ]
+  },
+  "bandage": {
+    "display_name": "Bandage",
+    "needs": [
+      {
+        "name": "Fabric",
+        "quantity": 5
+      }
+    ]
+  },
+  "barricade-kit": {
+    "display_name": "Barricade Kit",
+    "needs": [
+      {
+        "name": "Metal Parts",
+        "quantity": 5
+      },
+      {
+        "name": "Steel Spring",
+        "quantity": 1
+      }
+    ]
+  },
+  "bettina-i": {
+    "display_name": "Bettina I",
+    "needs": [
+      {
+        "name": "Advanced Mechanical Components",
+        "quantity": 3
+      },
+      {
+        "name": "Heavy Gun Parts",
+        "quantity": 3
+      },
+      {
+        "name": "Canister",
+        "quantity": 3
+      }
+    ]
+  },
+  "bettina-ii": {
+    "display_name": "Bettina II",
+    "needs": [
+      {
+        "name": "Advanced Mechanical Components",
+        "quantity": 1
+      },
+      {
+        "name": "Heavy Gun Parts",
+        "quantity": 2
+      }
+    ]
+  },
+  "bettina-iii": {
+    "display_name": "Bettina III",
+    "needs": [
+      {
+        "name": "Advanced Mechanical Components",
+        "quantity": 1
+      },
+      {
+        "name": "Heavy Gun Parts",
+        "quantity": 2
+      }
+    ]
+  },
+  "bettina-iv": {
+    "display_name": "Bettina IV",
+    "needs": [
+      {
+        "name": "Advanced Mechanical Components",
+        "quantity": 2
+      },
+      {
+        "name": "Heavy Gun Parts",
+        "quantity": 2
+      }
+    ]
+  },
+  "binoculars": {
+    "display_name": "Binoculars",
+    "needs": [
+      {
+        "name": "Plastic Parts",
+        "quantity": 8
+      },
+      {
+        "name": "Rubber Parts",
+        "quantity": 4
+      }
+    ]
+  },
+  "blaze-grenade": {
+    "display_name": "Blaze Grenade",
+    "needs": [
+      {
+        "name": "Oil",
+        "quantity": 2
+      },
+      {
+        "name": "Metal Parts",
+        "quantity": 7
+      }
+    ]
+  },
+  "bobcat-i": {
+    "display_name": "Bobcat I",
+    "needs": [
+      {
+        "name": "Advanced Mechanical Components",
+        "quantity": 4
+      },
+      {
+        "name": "Steel Spring",
+        "quantity": 4
+      },
+      {
+        "name": "Bobcat Blueprint",
+        "quantity": 1
+      }
+    ]
+  },
+  "bobcat-ii": {
+    "display_name": "Bobcat II",
+    "needs": [
+      {
+        "name": "Bobcat I",
+        "quantity": 1
+      },
+      {
+        "name": "Advanced Mechanical Components",
+        "quantity": 2
+      },
+      {
+        "name": "Light Gun Parts",
+        "quantity": 1
+      }
+    ]
+  },
+  "bobcat-iii": {
+    "display_name": "Bobcat III",
+    "needs": [
+      {
+        "name": "Advanced Mechanical Components",
+        "quantity": 2
+      },
+      {
+        "name": "Light Gun Parts",
+        "quantity": 3
+      },
+      {
+        "name": "Bobcat II",
+        "quantity": 1
+      }
+    ]
+  },
+  "bobcat-iv": {
+    "display_name": "Bobcat IV",
+    "needs": [
+      {
+        "name": "Bobcat III",
+        "quantity": 1
+      },
+      {
+        "name": "Advanced Mechanical Components",
+        "quantity": 2
+      },
+      {
+        "name": "Light Gun Parts",
+        "quantity": 3
+      }
+    ]
+  },
+  "burletta-i": {
+    "display_name": "Burletta I",
+    "needs": [
+      {
+        "name": "Mechanical Components",
+        "quantity": 3
+      },
+      {
+        "name": "Simple Gun Parts",
+        "quantity": 3
+      },
+      {
+        "name": "Burletta Blueprint",
+        "quantity": 1
+      }
+    ]
+  },
+  "burletta-iv": {
+    "display_name": "Burletta IV",
+    "needs": [
+      {
+        "name": "Burletta III",
+        "quantity": 1
+      },
+      {
+        "name": "Mechanical Components",
+        "quantity": 4
+      },
+      {
+        "name": "Light Gun Parts",
+        "quantity": 1
+      }
+    ]
+  },
+  "burletta-iiii": {
+    "display_name": "Burletta III",
+    "needs": [
+      {
+        "name": "Burletta II",
+        "quantity": 1
+      },
+      {
+        "name": "Mechanical Components",
+        "quantity": 3
+      },
+      {
+        "name": "Simple Gun Parts",
+        "quantity": 1
+      }
+    ]
+  },
+  "burletta-ii": {
+    "display_name": "Burletta II",
+    "needs": [
+      {
+        "name": "Burletta I",
+        "quantity": 1
+      },
+      {
+        "name": "Mechanical Components",
+        "quantity": 3
+      },
+      {
+        "name": "Simple Gun Parts",
+        "quantity": 1
+      }
+    ]
+  },
+  "combat-mk-3-aggressive": {
+    "display_name": "Combat Mk. 3 (Aggressive)",
+    "needs": [
+      {
+        "name": "Advanced Electrical Components",
+        "quantity": 2
+      },
+      {
+        "name": "Processor",
+        "quantity": 3
+      }
+    ]
+  },
+  "combat-mk-2": {
+    "display_name": "Combat Mk. 2",
+    "needs": [
+      {
+        "name": "Electrical Components",
+        "quantity": 2
+      },
+      {
+        "name": "Magnet",
+        "quantity": 3
+      }
+    ]
+  },
+  "combat-mk-1": {
+    "display_name": "Combat Mk. 1",
+    "needs": [
+      {
+        "name": "Plastic Parts",
+        "quantity": 6
+      },
+      {
+        "name": "Rubber Parts",
+        "quantity": 6
+      }
+    ]
+  },
+  "combat-mk3-flanking": {
+    "display_name": "Combat Mk.3 (Flanking)",
+    "needs": [
+      {
+        "name": "Advanced Electrical Components",
+        "quantity": 2
+      },
+      {
+        "name": "Processor",
+        "quantity": 3
+      }
+    ]
+  },
+  "compensator-ii": {
+    "display_name": "Compensator II",
+    "needs": [
+      {
+        "name": "Mechanical Components",
+        "quantity": 2
+      },
+      {
+        "name": "Wires",
+        "quantity": 4
+      }
+    ]
+  },
+  "compensator-i": {
+    "display_name": "Compensator I",
+    "needs": [
+      {
+        "name": "Metal Parts",
+        "quantity": 6
+      },
+      {
+        "name": "Wires",
+        "quantity": 1
+      }
+    ]
+  },
+  "complex-gun-parts": {
+    "display_name": "Complex Gun Parts",
+    "needs": [
+      {
+        "name": "Light Gun Parts",
+        "quantity": 2
+      },
+      {
+        "name": "Medium Gun Parts",
+        "quantity": 2
+      },
+      {
+        "name": "Heavy Gun Parts",
+        "quantity": 2
+      }
+    ]
+  },
+  "crude-explosives": {
+    "display_name": "Crude Explosives",
+    "needs": [
+      {
+        "name": "Chemicals",
+        "quantity": 6
+      }
+    ]
+  },
+  "defibrillator": {
+    "display_name": "Defibrillator",
+    "needs": [
+      {
+        "name": "Plastic Parts",
+        "quantity": 3
+      },
+      {
+        "name": "Moss",
+        "quantity": 1
+      }
+    ]
+  },
+  "door-blocker": {
+    "display_name": "Door Blocker",
+    "needs": [
+      {
+        "name": "Metal Parts",
+        "quantity": 3
+      },
+      {
+        "name": "Rubber Parts",
+        "quantity": 3
+      }
+    ]
+  },
+  "energy-ammo": {
+    "display_name": "Energy Clip",
+    "needs": [
+      {
+        "name": "Advanced ARC Powercell",
+        "quantity": 1
+      },
+      {
+        "name": "Battery",
+        "quantity": 2
+      }
+    ]
+  },
+  "durable-cloth": {
+    "display_name": "Durable Cloth",
+    "needs": [
+      {
+        "name": "Fabric",
+        "quantity": 14
+      }
+    ]
+  },
+  "electrical-components": {
+    "display_name": "Electrical Components",
+    "needs": [
+      {
+        "name": "Plastic Parts",
+        "quantity": 8
+      },
+      {
+        "name": "Rubber Parts",
+        "quantity": 4
+      }
+    ]
+  },
+  "equalizer-i": {
+    "display_name": "Equalizer",
+    "needs": [
+      {
+        "name": "Queen Reactor",
+        "quantity": 1
+      },
+      {
+        "name": "Magnetic Accelerator",
+        "quantity": 3
+      },
+      {
+        "name": "Complex Gun Parts",
+        "quantity": 3
+      }
+    ]
+  },
+  "explosive-compound": {
+    "display_name": "Explosive Compound",
+    "needs": [
+      {
+        "name": "Crude Explosives",
+        "quantity": 2
+      },
+      {
+        "name": "Oil",
+        "quantity": 2
+      }
+    ]
+  },
+  "explosive-mine": {
+    "display_name": "Explosive Mine",
+    "needs": [
+      {
+        "name": "Sensors",
+        "quantity": 1
+      },
+      {
+        "name": "Explosive Compound",
+        "quantity": 1
+      }
+    ]
+  },
+  "extended-light-mag-iii": {
+    "display_name": "Extended Light Mag III",
+    "needs": [
+      {
+        "name": "Mod Components",
+        "quantity": 1
+      },
+      {
+        "name": "Steel Spring",
+        "quantity": 6
+      }
+    ]
+  },
+  "extended-light-mag-ii": {
+    "display_name": "Extended Light Mag II",
+    "needs": [
+      {
+        "name": "Mechanical Components",
+        "quantity": 1
+      },
+      {
+        "name": "Steel Spring",
+        "quantity": 1
+      }
+    ]
+  },
+  "extended-light-mag-i": {
+    "display_name": "Extended Light Mag I",
+    "needs": [
+      {
+        "name": "Plastic Parts",
+        "quantity": 6
+      },
+      {
+        "name": "Steel Spring",
+        "quantity": 1
+      }
+    ]
+  },
+  "extended-medium-mag-iii": {
+    "display_name": "Extended Medium Mag III",
+    "needs": [
+      {
+        "name": "Mod Components",
+        "quantity": 1
+      },
+      {
+        "name": "Steel Spring",
+        "quantity": 6
+      }
+    ]
+  },
+  "extended-medium-mag-i": {
+    "display_name": "Extended Medium Mag I",
+    "needs": [
+      {
+        "name": "Plastic Parts",
+        "quantity": 6
+      },
+      {
+        "name": "Steel Spring",
+        "quantity": 1
+      }
+    ]
+  },
+  "extended-shotgun-mag-ii": {
+    "display_name": "Extended Shotgun Mag II",
+    "needs": [
+      {
+        "name": "Mechanical Components",
+        "quantity": 1
+      },
+      {
+        "name": "Steel Spring",
+        "quantity": 1
+      }
+    ]
+  },
+  "extended-shotgun-mag-i": {
+    "display_name": "Extended Shotgun Mag I",
+    "needs": [
+      {
+        "name": "Plastic Parts",
+        "quantity": 6
+      },
+      {
+        "name": "Steel Spring",
+        "quantity": 1
+      }
+    ]
+  },
+  "extended-shotgun-mag-iii": {
+    "display_name": "Extended Shotgun Mag III",
+    "needs": [
+      {
+        "name": "Mod Components",
+        "quantity": 1
+      },
+      {
+        "name": "Steel Spring",
+        "quantity": 6
+      }
+    ]
+  },
+  "ferro-i": {
+    "display_name": "Ferro I",
+    "needs": [
+      {
+        "name": "Metal Parts",
+        "quantity": 5
+      },
+      {
+        "name": "Rubber Parts",
+        "quantity": 2
+      }
+    ]
+  },
+  "ferro-ii": {
+    "display_name": "Ferro II",
+    "needs": [
+      {
+        "name": "Ferro I",
+        "quantity": 1
+      },
+      {
+        "name": "Metal Parts",
+        "quantity": 7
+      }
+    ]
+  },
+  "ferro-iii": {
+    "display_name": "Ferro III",
+    "needs": [
+      {
+        "name": "Ferro II",
+        "quantity": 1
+      },
+      {
+        "name": "Metal Parts",
+        "quantity": 9
+      },
+      {
+        "name": "Simple Gun Parts",
+        "quantity": 1
+      }
+    ]
+  },
+  "ferro-iv": {
+    "display_name": "Ferro IV",
+    "needs": [
+      {
+        "name": "Ferro III",
+        "quantity": 1
+      },
+      {
+        "name": "Mechanical Components",
+        "quantity": 1
+      },
+      {
+        "name": "Simple Gun Parts",
+        "quantity": 1
+      }
+    ]
+  },
+  "flame-spray": {
+    "display_name": "Flame Spray",
+    "needs": [
+      {
+        "name": "Air Freshener",
+        "quantity": 1
+      },
+      {
+        "name": "Fireball Burner",
+        "quantity": 1
+      }
+    ]
+  },
+  "fruit-mix": {
+    "display_name": "Fruit Mix",
+    "needs": [
+      {
+        "name": "Lemon",
+        "quantity": 1
+      },
+      {
+        "name": "Apricot",
+        "quantity": 1
+      },
+      {
+        "name": "Prickly Pear",
+        "quantity": 1
+      }
+    ]
+  },
+  "gas-grenade": {
+    "display_name": "Gas Grenade",
+    "needs": [
+      {
+        "name": "Chemicals",
+        "quantity": 4
+      },
+      {
+        "name": "Rubber Parts",
+        "quantity": 2
+      }
+    ]
+  },
+  "hairpin-ii": {
+    "display_name": "Hairpin II",
+    "needs": [
+      {
+        "name": "Hairpin I",
+        "quantity": 1
+      },
+      {
+        "name": "Metal Parts",
+        "quantity": 8
+      }
+    ]
+  },
+  "hairpin-i": {
+    "display_name": "Hairpin I",
+    "needs": [
+      {
+        "name": "Metal Parts",
+        "quantity": 2
+      },
+      {
+        "name": "Plastic Parts",
+        "quantity": 5
+      }
+    ]
+  },
+  "hairpin-iii": {
+    "display_name": "Hairpin III",
+    "needs": [
+      {
+        "name": "Hairpin II",
+        "quantity": 1
+      },
+      {
+        "name": "Metal Parts",
+        "quantity": 9
+      },
+      {
+        "name": "Simple Gun Parts",
+        "quantity": 1
+      }
+    ]
+  },
+  "hairpin-iv": {
+    "display_name": "Hairpin IV",
+    "needs": [
+      {
+        "name": "Hairpin III",
+        "quantity": 1
+      },
+      {
+        "name": "Mechanical Components",
+        "quantity": 1
+      },
+      {
+        "name": "Simple Gun Parts",
+        "quantity": 1
+      }
+    ]
+  },
+  "heavy-ammo": {
+    "display_name": "Heavy Ammo",
+    "needs": [
+      {
+        "name": "Metal Parts",
+        "quantity": 3
+      },
+      {
+        "name": "Chemicals",
+        "quantity": 2
+      }
+    ]
+  },
+  "heavy-gun-parts-recipe": {
+    "display_name": "Heavy Gun Parts Blueprint",
+    "needs": [
+      {
+        "name": "Simple Gun Parts",
+        "quantity": 4
+      }
+    ]
+  },
+  "heavy-fuze-grenade": {
+    "display_name": "Heavy Fuze Grenade",
+    "needs": [
+      {
+        "name": "Explosive Compound",
+        "quantity": 1
+      },
+      {
+        "name": "Canister",
+        "quantity": 2
+      }
+    ]
+  },
+  "heavy-gun-parts": {
+    "display_name": "Heavy Gun Parts",
+    "needs": [
+      {
+        "name": "Simple Gun Parts",
+        "quantity": 2
+      },
+      {
+        "name": "Rubber Parts",
+        "quantity": 8
+      }
+    ]
+  },
+  "heavy-shield": {
+    "display_name": "Heavy Shield",
+    "needs": [
+      {
+        "name": "Power Rod",
+        "quantity": 1
+      },
+      {
+        "name": "Voltage Converter",
+        "quantity": 2
+      }
+    ]
+  },
+  "herbal-bandage": {
+    "display_name": "Herbal Bandage",
+    "needs": [
+      {
+        "name": "Durable Cloth",
+        "quantity": 1
+      },
+      {
+        "name": "Great Mullein",
+        "quantity": 1
+      }
+    ]
+  },
+  "hullcracker-i": {
+    "display_name": "Hullcracker I",
+    "needs": [
+      {
+        "name": "Magnetic Accelerator",
+        "quantity": 1
+      },
+      {
+        "name": "Heavy Gun Parts",
+        "quantity": 3
+      },
+      {
+        "name": "Exodus Modules",
+        "quantity": 1
+      }
+    ]
+  },
+  "hullcracker-ii": {
+    "display_name": "Hullcracker II",
+    "needs": [
+      {
+        "name": "Advanced Mechanical Components",
+        "quantity": 1
+      },
+      {
+        "name": "Heavy Gun Parts",
+        "quantity": 2
+      }
+    ]
+  },
+  "hullcracker-iii": {
+    "display_name": "Hullcracker III",
+    "needs": [
+      {
+        "name": "Advanced Mechanical Components",
+        "quantity": 2
+      },
+      {
+        "name": "Heavy Gun Parts",
+        "quantity": 1
+      }
+    ]
+  },
+  "hullcracker-iv": {
+    "display_name": "Hullcracker IV",
+    "needs": [
+      {
+        "name": "Advanced Mechanical Components",
+        "quantity": 2
+      },
+      {
+        "name": "Heavy Gun Parts",
+        "quantity": 3
+      }
+    ]
+  },
+  "il-toro-i": {
+    "display_name": "Il Toro I",
+    "needs": [
+      {
+        "name": "Mechanical Components",
+        "quantity": 5
+      },
+      {
+        "name": "Simple Gun Parts",
+        "quantity": 6
+      }
+    ]
+  },
+  "il-toro-ii": {
+    "display_name": "Il Toro II",
+    "needs": [
+      {
+        "name": "Il Toro I",
+        "quantity": 1
+      },
+      {
+        "name": "Mechanical Components",
+        "quantity": 3
+      },
+      {
+        "name": "Simple Gun Parts",
+        "quantity": 1
+      }
+    ]
+  },
+  "il-toro-iiii": {
+    "display_name": "Il Toro III",
+    "needs": [
+      {
+        "name": "Il Toro II",
+        "quantity": 1
+      },
+      {
+        "name": "Mechanical Components",
+        "quantity": 4
+      },
+      {
+        "name": "Heavy Gun Parts",
+        "quantity": 1
+      }
+    ]
+  },
+  "il-toro-iv": {
+    "display_name": "Il Toro IV",
+    "needs": [
+      {
+        "name": "Il Toro III",
+        "quantity": 1
+      },
+      {
+        "name": "Mechanical Components",
+        "quantity": 4
+      },
+      {
+        "name": "Heavy Gun Parts",
+        "quantity": 1
+      }
+    ]
+  },
+  "jupiter-i": {
+    "display_name": "Jupiter",
+    "needs": [
+      {
+        "name": "Power Rod",
+        "quantity": 8
+      },
+      {
+        "name": "Processor",
+        "quantity": 20
+      },
+      {
+        "name": "Queen Reactor",
+        "quantity": 1
+      }
+    ]
+  },
+  "kettle-i": {
+    "display_name": "Kettle I",
+    "needs": [
+      {
+        "name": "Rubber Parts",
+        "quantity": 8
+      },
+      {
+        "name": "Metal Parts",
+        "quantity": 6
+      }
+    ]
+  },
+  "kettle-iv": {
+    "display_name": "Kettle IV",
+    "needs": [
+      {
+        "name": "Kettle III",
+        "quantity": 1
+      },
+      {
+        "name": "Mechanical Components",
+        "quantity": 3
+      },
+      {
+        "name": "Simple Gun Parts",
+        "quantity": 1
+      }
+    ]
+  },
+  "kettle-ii": {
+    "display_name": "Kettle II",
+    "needs": [
+      {
+        "name": "Kettle I",
+        "quantity": 1
+      },
+      {
+        "name": "Metal Parts",
+        "quantity": 8
+      },
+      {
+        "name": "Plastic Parts",
+        "quantity": 10
+      }
+    ]
+  },
+  "kettle-iii": {
+    "display_name": "Kettle III",
+    "needs": [
+      {
+        "name": "Kettle II",
+        "quantity": 1
+      },
+      {
+        "name": "Metal Parts",
+        "quantity": 10
+      },
+      {
+        "name": "Simple Gun Parts",
+        "quantity": 1
+      }
+    ]
+  },
+  "light-ammo": {
+    "display_name": "Light Ammo",
+    "needs": [
+      {
+        "name": "Metal Parts",
+        "quantity": 3
+      },
+      {
+        "name": "Chemicals",
+        "quantity": 2
+      }
+    ]
+  },
+  "light-gun-parts": {
+    "display_name": "Light Gun Parts",
+    "needs": [
+      {
+        "name": "Simple Gun Parts",
+        "quantity": 2
+      },
+      {
+        "name": "Rubber Parts",
+        "quantity": 8
+      }
+    ]
+  },
+  "light-impact-grenade": {
+    "display_name": "Light Impact Grenade",
+    "needs": [
+      {
+        "name": "Plastic Parts",
+        "quantity": 2
+      },
+      {
+        "name": "Chemicals",
+        "quantity": 3
+      }
+    ]
+  },
+  "lightweight-stock": {
+    "display_name": "Lightweight Stock",
+    "needs": [
+      {
+        "name": "Mod Components",
+        "quantity": 1
+      },
+      {
+        "name": "Duct Tape",
+        "quantity": 6
+      }
+    ]
+  },
+  "light-shield": {
+    "display_name": "Light Shield",
+    "needs": [
+      {
+        "name": "ARC Alloy",
+        "quantity": 2
+      },
+      {
+        "name": "Plastic Parts",
+        "quantity": 4
+      }
+    ]
+  },
+  "lil-smoke-grenade": {
+    "display_name": "Li'l Smoke Grenade",
+    "needs": [
+      {
+        "name": "Chemicals",
+        "quantity": 5
+      },
+      {
+        "name": "Plastic Parts",
+        "quantity": 1
+      }
+    ]
+  },
+  "looting-mk-1": {
+    "display_name": "Looting Mk. 1",
+    "needs": [
+      {
+        "name": "Plastic Parts",
+        "quantity": 6
+      },
+      {
+        "name": "Rubber Parts",
+        "quantity": 6
+      }
+    ]
+  },
+  "looting-mk-2": {
+    "display_name": "Looting Mk. 2",
+    "needs": [
+      {
+        "name": "Electrical Components",
+        "quantity": 2
+      },
+      {
+        "name": "Magnet",
+        "quantity": 3
+      }
+    ]
+  },
+  "looting-mk-3-cautious": {
+    "display_name": "Looting MK. 3 (Cautious)",
+    "needs": [
+      {
+        "name": "Advanced Electrical Components",
+        "quantity": 2
+      },
+      {
+        "name": "Processor",
+        "quantity": 3
+      }
+    ]
+  },
+  "lure-grenade": {
+    "display_name": "Lure Grenade",
+    "needs": [
+      {
+        "name": "Speaker Component",
+        "quantity": 2
+      },
+      {
+        "name": "Plastic Parts",
+        "quantity": 2
+      }
+    ]
+  },
+  "magnetic-accelerator": {
+    "display_name": "Magnetic Accelerator",
+    "needs": [
+      {
+        "name": "Advanced Mechanical Components",
+        "quantity": 2
+      },
+      {
+        "name": "ARC Motion Core",
+        "quantity": 2
+      }
+    ]
+  },
+  "mechanical-components": {
+    "display_name": "Mechanical Components",
+    "needs": [
+      {
+        "name": "Metal Parts",
+        "quantity": 7
+      },
+      {
+        "name": "Rubber Parts",
+        "quantity": 3
+      }
+    ]
+  },
+  "medium-ammo": {
+    "display_name": "Medium Ammo",
+    "needs": [
+      {
+        "name": "Metal Parts",
+        "quantity": 3
+      },
+      {
+        "name": "Chemicals",
+        "quantity": 2
+      }
+    ]
+  },
+  "medium-shield": {
+    "display_name": "Medium Shield",
+    "needs": [
+      {
+        "name": "ARC Circuitry",
+        "quantity": 1
+      },
+      {
+        "name": "Battery",
+        "quantity": 4
+      }
+    ]
+  },
+  "mod-components": {
+    "display_name": "Mod Components",
+    "needs": [
+      {
+        "name": "Mechanical Components",
+        "quantity": 2
+      },
+      {
+        "name": "Steel Spring",
+        "quantity": 2
+      }
+    ]
+  },
+  "muzzle-brake-i": {
+    "display_name": "Muzzle Brake I",
+    "needs": [
+      {
+        "name": "Metal Parts",
+        "quantity": 6
+      },
+      {
+        "name": "Wires",
+        "quantity": 1
+      }
+    ]
+  },
+  "osprey-i": {
+    "display_name": "Osprey I",
+    "needs": [
+      {
+        "name": "Advanced Mechanical Components",
+        "quantity": 2
+      },
+      {
+        "name": "Medium Gun Parts",
+        "quantity": 3
+      },
+      {
+        "name": "Wires",
+        "quantity": 7
+      }
+    ]
+  },
+  "osprey-ii": {
+    "display_name": "Osprey II",
+    "needs": [
+      {
+        "name": "Osprey I",
+        "quantity": 1
+      },
+      {
+        "name": "Advanced Mechanical Components",
+        "quantity": 1
+      },
+      {
+        "name": "Medium Gun Parts",
+        "quantity": 2
+      }
+    ]
+  },
+  "osprey-iii": {
+    "display_name": "Osprey III",
+    "needs": [
+      {
+        "name": "Osprey II",
+        "quantity": 1
+      },
+      {
+        "name": "Advanced Mechanical Components",
+        "quantity": 1
+      },
+      {
+        "name": "Medium Gun Parts",
+        "quantity": 2
+      }
+    ]
+  },
+  "osprey-iv": {
+    "display_name": "Osprey IV",
+    "needs": [
+      {
+        "name": "Osprey III",
+        "quantity": 1
+      },
+      {
+        "name": "Advanced Mechanical Components",
+        "quantity": 2
+      },
+      {
+        "name": "Medium Gun Parts",
+        "quantity": 2
+      }
+    ]
+  },
+  "padded-stock": {
+    "display_name": "Padded Stock",
+    "needs": [
+      {
+        "name": "Mod Components",
+        "quantity": 1
+      },
+      {
+        "name": "Duct Tape",
+        "quantity": 6
+      }
+    ]
+  },
+  "photoelectric-cloak": {
+    "display_name": "Photoelectric Cloak",
+    "needs": [
+      {
+        "name": "Advanced Electrical Components",
+        "quantity": 2
+      },
+      {
+        "name": "Speaker Component",
+        "quantity": 4
+      }
+    ]
+  },
+  "power-rod": {
+    "display_name": "Power Rod",
+    "needs": [
+      {
+        "name": "ARC Circuitry",
+        "quantity": 2
+      },
+      {
+        "name": "Advanced Electrical Components",
+        "quantity": 2
+      }
+    ]
+  },
+  "raider-hatch-key": {
+    "display_name": "Raider Hatch Key",
+    "needs": [
+      {
+        "name": "Advanced Electrical Components",
+        "quantity": 1
+      },
+      {
+        "name": "Sensors",
+        "quantity": 3
+      }
+    ]
+  },
+  "rattler-i": {
+    "display_name": "Rattler I",
+    "needs": [
+      {
+        "name": "Metal Parts",
+        "quantity": 16
+      },
+      {
+        "name": "Rubber Parts",
+        "quantity": 12
+      }
+    ]
+  },
+  "rattler-ii": {
+    "display_name": "Rattler II",
+    "needs": [
+      {
+        "name": "Rattler I",
+        "quantity": 1
+      },
+      {
+        "name": "Metal Parts",
+        "quantity": 10
+      },
+      {
+        "name": "Rubber Parts",
+        "quantity": 10
+      }
+    ]
+  },
+  "rattler-iii": {
+    "display_name": "Rattler III",
+    "needs": [
+      {
+        "name": "Rattler II",
+        "quantity": 1
+      },
+      {
+        "name": "Mechanical Components",
+        "quantity": 3
+      },
+      {
+        "name": "Simple Gun Parts",
+        "quantity": 1
+      }
+    ]
+  },
+  "rattler-iv": {
+    "display_name": "Rattler IV",
+    "needs": [
+      {
+        "name": "Mechanical Components",
+        "quantity": 3
+      },
+      {
+        "name": "Simple Gun Parts",
+        "quantity": 1
+      },
+      {
+        "name": "Rattler III",
+        "quantity": 1
+      }
+    ]
+  },
+  "renegade-iii": {
+    "display_name": "Renegade III",
+    "needs": [
+      {
+        "name": "Renegade II",
+        "quantity": 1
+      },
+      {
+        "name": "Advanced Mechanical Components",
+        "quantity": 1
+      },
+      {
+        "name": "Medium Gun Parts",
+        "quantity": 2
+      }
+    ]
+  },
+  "renegade-i": {
+    "display_name": "Renegade I",
+    "needs": [
+      {
+        "name": "Advanced Mechanical Components",
+        "quantity": 2
+      },
+      {
+        "name": "Medium Gun Parts",
+        "quantity": 3
+      },
+      {
+        "name": "Oil",
+        "quantity": 5
+      }
+    ]
+  },
+  "renegade-ii": {
+    "display_name": "Renegade II",
+    "needs": [
+      {
+        "name": "Renegade I",
+        "quantity": 1
+      },
+      {
+        "name": "Advanced Mechanical Components",
+        "quantity": 1
+      },
+      {
+        "name": "Medium Gun Parts",
+        "quantity": 2
+      }
+    ]
+  },
+  "renegade-iv": {
+    "display_name": "Renegade IV",
+    "needs": [
+      {
+        "name": "Renegade III",
+        "quantity": 1
+      },
+      {
+        "name": "Advanced Mechanical Components",
+        "quantity": 2
+      },
+      {
+        "name": "Medium Gun Parts",
+        "quantity": 2
+      }
+    ]
+  },
+  "shield-recharger": {
+    "display_name": "Shield Recharger",
+    "needs": [
+      {
+        "name": "Rubber Parts",
+        "quantity": 5
+      },
+      {
+        "name": "ARC Powercell",
+        "quantity": 1
+      }
+    ]
+  },
+  "shotgun-ammo": {
+    "display_name": "Shotgun ammo",
+    "needs": [
+      {
+        "name": "Metal Parts",
+        "quantity": 3
+      },
+      {
+        "name": "Chemicals",
+        "quantity": 2
+      }
+    ]
+  },
+  "shotgun-choke-i": {
+    "display_name": "Shotgun Choke I",
+    "needs": [
+      {
+        "name": "Metal Parts",
+        "quantity": 6
+      },
+      {
+        "name": "Wires",
+        "quantity": 1
+      }
+    ]
+  },
+  "shotgun-choke-ii": {
+    "display_name": "Shotgun Choke II",
+    "needs": [
+      {
+        "name": "Mechanical Components",
+        "quantity": 1
+      },
+      {
+        "name": "Wires",
+        "quantity": 1
+      }
+    ]
+  },
+  "shotgun-gun-parts": {
+    "display_name": "Shotgun Parts",
+    "needs": [
+      {
+        "name": "Simple Gun Parts",
+        "quantity": 2
+      }
+    ]
+  },
+  "shotgun-silencer": {
+    "display_name": "Shotgun Silencer",
+    "needs": [
+      {
+        "name": "Mod Components",
+        "quantity": 1
+      },
+      {
+        "name": "Wires",
+        "quantity": 9
+      }
+    ]
+  },
+  "silencer-i": {
+    "display_name": "Silencer I",
+    "needs": [
+      {
+        "name": "Wires",
+        "quantity": 1
+      },
+      {
+        "name": "Mechanical Components",
+        "quantity": 1
+      }
+    ]
+  },
+  "shrapnel-grenade": {
+    "display_name": "Shrapnel Grenade",
+    "needs": [
+      {
+        "name": "Crude Explosives",
+        "quantity": 1
+      },
+      {
+        "name": "Steel Spring",
+        "quantity": 2
+      }
+    ]
+  },
+  "smoke-grenade": {
+    "display_name": "Smoke Grenade",
+    "needs": [
+      {
+        "name": "Chemicals",
+        "quantity": 7
+      },
+      {
+        "name": "Canister",
+        "quantity": 1
+      }
+    ]
+  },
+  "snap-blast-grenade": {
+    "display_name": "Snap Blast Grenade",
+    "needs": [
+      {
+        "name": "Crude Explosives",
+        "quantity": 2
+      },
+      {
+        "name": "Magnet",
+        "quantity": 1
+      }
+    ]
+  },
+  "snap-hook": {
+    "display_name": "Snap Hook",
+    "needs": [
+      {
+        "name": "Rope",
+        "quantity": 4
+      },
+      {
+        "name": "Advanced Electrical Components",
+        "quantity": 4
+      }
+    ]
+  },
+  "stable-stock-i": {
+    "display_name": "Stable Stock I",
+    "needs": [
+      {
+        "name": "Rubber Parts",
+        "quantity": 7
+      },
+      {
+        "name": "Duct Tape",
+        "quantity": 1
+      }
+    ]
+  },
+  "stable-stock-iii": {
+    "display_name": "Stable Stock III",
+    "needs": [
+      {
+        "name": "Mod Components",
+        "quantity": 1
+      },
+      {
+        "name": "Duct Tape",
+        "quantity": 6
+      }
+    ]
+  },
+  "stable-stock-ii": {
+    "display_name": "Stable Stock II",
+    "needs": [
+      {
+        "name": "Mechanical Components",
+        "quantity": 1
+      },
+      {
+        "name": "Duct Tape",
+        "quantity": 1
+      }
+    ]
+  },
+  "sterilized-bandage": {
+    "display_name": "Sterilized Bandage",
+    "needs": [
+      {
+        "name": "Antiseptic",
+        "quantity": 1
+      },
+      {
+        "name": "Durable Cloth",
+        "quantity": 2
+      }
+    ]
+  },
+  "stitcher-ii": {
+    "display_name": "Stitcher II",
+    "needs": [
+      {
+        "name": "Stitcher I",
+        "quantity": 1
+      },
+      {
+        "name": "Metal Parts",
+        "quantity": 8
+      },
+      {
+        "name": "Rubber Parts",
+        "quantity": 12
+      }
+    ]
+  },
+  "stitcher-i": {
+    "display_name": "Stitcher I",
+    "needs": [
+      {
+        "name": "Metal Parts",
+        "quantity": 8
+      },
+      {
+        "name": "Rubber Parts",
+        "quantity": 4
+      }
+    ]
+  },
+  "stitcher-iii": {
+    "display_name": "Stitcher III",
+    "needs": [
+      {
+        "name": "Stitcher II",
+        "quantity": 1
+      },
+      {
+        "name": "Metal Parts",
+        "quantity": 10
+      },
+      {
+        "name": "Simple Gun Parts",
+        "quantity": 1
+      }
+    ]
+  },
+  "stitcher-iv": {
+    "display_name": "Stitcher IV",
+    "needs": [
+      {
+        "name": "Stitcher III",
+        "quantity": 1
+      },
+      {
+        "name": "Mechanical Components",
+        "quantity": 3
+      },
+      {
+        "name": "Simple Gun Parts",
+        "quantity": 1
+      }
+    ]
+  },
+  "surge-shield-recharger": {
+    "display_name": "Surge Shield Recharger",
+    "needs": [
+      {
+        "name": "Electrical Components",
+        "quantity": 1
+      },
+      {
+        "name": "Advanced ARC Powercell",
+        "quantity": 1
+      }
+    ]
+  },
+  "tactical-mk-2": {
+    "display_name": "Tactical Mk. 2",
+    "needs": [
+      {
+        "name": "Electrical Components",
+        "quantity": 2
+      },
+      {
+        "name": "Magnet",
+        "quantity": 3
+      }
+    ]
+  },
+  "tactical-mk-3-healing": {
+    "display_name": "Tactical Mk. 3 (Healing)",
+    "needs": [
+      {
+        "name": "Advanced Electrical Components",
+        "quantity": 2
+      },
+      {
+        "name": "Processor",
+        "quantity": 3
+      }
+    ]
+  },
+  "tactical-mk-1": {
+    "display_name": "Tactical Mk. 1",
+    "needs": [
+      {
+        "name": "Plastic Parts",
+        "quantity": 6
+      },
+      {
+        "name": "Rubber Parts",
+        "quantity": 6
+      }
+    ]
+  },
+  "tactical-mk3-defensive": {
+    "display_name": "Tactical Mk.3 (Defensive)",
+    "needs": [
+      {
+        "name": "Advanced Electrical Components",
+        "quantity": 2
+      },
+      {
+        "name": "Processor",
+        "quantity": 3
+      }
+    ]
+  },
+  "tempest-ii": {
+    "display_name": "Tempest II",
+    "needs": [
+      {
+        "name": "Tempest I",
+        "quantity": 1
+      },
+      {
+        "name": "Advanced Mechanical Components",
+        "quantity": 2
+      },
+      {
+        "name": "Medium Gun Parts",
+        "quantity": 1
+      }
+    ]
+  },
+  "tempest-iii": {
+    "display_name": "Tempest III",
+    "needs": [
+      {
+        "name": "Tempest II",
+        "quantity": 1
+      },
+      {
+        "name": "Advanced Mechanical Components",
+        "quantity": 2
+      },
+      {
+        "name": "Medium Gun Parts",
+        "quantity": 3
+      }
+    ]
+  },
+  "tempest-iv": {
+    "display_name": "Tempest IV",
+    "needs": [
+      {
+        "name": "Tempest III",
+        "quantity": 1
+      },
+      {
+        "name": "Advanced Mechanical Components",
+        "quantity": 2
+      },
+      {
+        "name": "Medium Gun Parts",
+        "quantity": 3
+      }
+    ]
+  },
+  "torrente-i": {
+    "display_name": "Torrente I",
+    "needs": [
+      {
+        "name": "Advanced Mechanical Components",
+        "quantity": 1
+      },
+      {
+        "name": "Medium Gun Parts",
+        "quantity": 2
+      }
+    ]
+  },
+  "torrente-iii": {
+    "display_name": "Torrente III",
+    "needs": [
+      {
+        "name": "Torrente II",
+        "quantity": 1
+      },
+      {
+        "name": "Advanced Mechanical Components",
+        "quantity": 1
+      },
+      {
+        "name": "Medium Gun Parts",
+        "quantity": 2
+      }
+    ]
+  },
+  "torrente-ii": {
+    "display_name": "Torrente II",
+    "needs": [
+      {
+        "name": "Torrente I",
+        "quantity": 1
+      },
+      {
+        "name": "Advanced Mechanical Components",
+        "quantity": 1
+      },
+      {
+        "name": "Medium Gun Parts",
+        "quantity": 2
+      }
+    ]
+  },
+  "torrente-iv": {
+    "display_name": "Torrente IV",
+    "needs": [
+      {
+        "name": "Medium Gun Parts",
+        "quantity": 3
+      },
+      {
+        "name": "Torrente III",
+        "quantity": 1
+      },
+      {
+        "name": "Advanced Mechanical Components",
+        "quantity": 3
+      }
+    ]
+  },
+  "unusable-weapon": {
+    "display_name": "Unusable Weapon",
+    "needs": [
+      {
+        "name": "Simple Gun Parts",
+        "quantity": 5
+      }
+    ]
+  },
+  "venator-ii": {
+    "display_name": "Venator II",
+    "needs": [
+      {
+        "name": "Advanced Mechanical Components",
+        "quantity": 1
+      },
+      {
+        "name": "Medium Gun Parts",
+        "quantity": 2
+      },
+      {
+        "name": "Venator I",
+        "quantity": 1
+      }
+    ]
+  },
+  "venator-i": {
+    "display_name": "Venator I",
+    "needs": [
+      {
+        "name": "Advanced Mechanical Components",
+        "quantity": 2
+      },
+      {
+        "name": "Magnet",
+        "quantity": 5
+      },
+      {
+        "name": "Medium Gun Parts",
+        "quantity": 3
+      }
+    ]
+  },
+  "venator-iii": {
+    "display_name": "Venator III",
+    "needs": [
+      {
+        "name": "Venator II",
+        "quantity": 1
+      },
+      {
+        "name": "Advanced Mechanical Components",
+        "quantity": 1
+      },
+      {
+        "name": "Medium Gun Parts",
+        "quantity": 2
+      }
+    ]
+  },
+  "vertical-grip-i": {
+    "display_name": "Vertical Grip I",
+    "needs": [
+      {
+        "name": "Plastic Parts",
+        "quantity": 6
+      },
+      {
+        "name": "Duct Tape",
+        "quantity": 1
+      }
+    ]
+  },
+  "venator-iv": {
+    "display_name": "Venator IV",
+    "needs": [
+      {
+        "name": "Venator III",
+        "quantity": 1
+      },
+      {
+        "name": "Advanced Mechanical Components",
+        "quantity": 1
+      },
+      {
+        "name": "Medium Gun Parts",
+        "quantity": 2
+      }
+    ]
+  },
+  "vertical-grip-iii": {
+    "display_name": "Vertical Grip III",
+    "needs": [
+      {
+        "name": "Mod Components",
+        "quantity": 2
+      },
+      {
+        "name": "Duct Tape",
+        "quantity": 5
+      }
+    ]
+  },
+  "vita-spray": {
+    "display_name": "Vita Spray",
+    "needs": [
+      {
+        "name": "Antiseptic",
+        "quantity": 2
+      },
+      {
+        "name": "Canister",
+        "quantity": 4
+      }
+    ]
+  },
+  "vita-shot": {
+    "display_name": "Vita Shot",
+    "needs": [
+      {
+        "name": "Antiseptic",
+        "quantity": 1
+      },
+      {
+        "name": "Syringe",
+        "quantity": 1
+      }
+    ]
+  },
+  "vulcano-ii": {
+    "display_name": "Vulcano II",
+    "needs": [
+      {
+        "name": "Advanced Mechanical Components",
+        "quantity": 1
+      },
+      {
+        "name": "Heavy Gun Parts",
+        "quantity": 2
+      },
+      {
+        "name": "Vulcano I",
+        "quantity": 1
+      }
+    ]
+  },
+  "vulcano-i": {
+    "display_name": "Vulcano I",
+    "needs": [
+      {
+        "name": "Advanced Mechanical Components",
+        "quantity": 3
+      },
+      {
+        "name": "Canister",
+        "quantity": 4
+      }
+    ]
+  },
+  "vulcano-iii": {
+    "display_name": "Vulcano III",
+    "needs": [
+      {
+        "name": "Vulcano II",
+        "quantity": 1
+      },
+      {
+        "name": "Advanced Mechanical Components",
+        "quantity": 2
+      },
+      {
+        "name": "Heavy Gun Parts",
+        "quantity": 1
+      }
+    ]
+  },
+  "vulcano-iv": {
+    "display_name": "Vulcano IV",
+    "needs": [
+      {
+        "name": "Vulcano III",
+        "quantity": 1
+      },
+      {
+        "name": "Advanced Mechanical Components",
+        "quantity": 2
+      },
+      {
+        "name": "Heavy Gun Parts",
+        "quantity": 3
+      }
+    ]
+  },
+  "zipline": {
+    "display_name": "Zipline",
+    "needs": [
+      {
+        "name": "Rope",
+        "quantity": 1
+      },
+      {
+        "name": "Mechanical Components",
+        "quantity": 1
+      }
+    ]
+  }
+}

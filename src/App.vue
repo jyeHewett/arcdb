@@ -3,6 +3,20 @@ import { ref, onMounted, computed } from 'vue'
 
 const BASE = import.meta.env.BASE_URL || '/'
 
+// Theme: a simple dark-mode toggle persisted to localStorage.
+const isDark = ref(false)
+function applyTheme(enable) {
+  try { document.documentElement.classList.toggle('dark', !!enable) } catch (e) { /* ignore */ }
+}
+function saveTheme(enable) {
+  try { localStorage.setItem('theme', enable ? 'dark' : 'light') } catch (e) { }
+}
+function toggleTheme() {
+  isDark.value = !isDark.value
+  applyTheme(isDark.value)
+  saveTheme(isDark.value)
+}
+
 const items = ref([])
 const columns = ref([])
 const error = ref(null)
@@ -11,11 +25,67 @@ const searchTerm = ref('')
 async function loadData() {
   try {
     // use Vite's runtime base so the request resolves correctly on GitHub Pages
-    const res = await fetch(`${import.meta.env.BASE_URL}data.json`)
+    const base = import.meta.env.BASE_URL || '/'
+
+    // load main items data
+    const res = await fetch(`${base}data.json`)
     if (!res.ok) throw new Error(`HTTP ${res.status}`)
     const data = await res.json()
-    // add derived field "safe to sell/recycle" based on Keep for Quests/Workshop
-    items.value = data.map(d => ({ ...d, "safe to sell/recycle": d["Keep for Quests/Workshop"] == null }))
+
+    // try to load crafts metadata (we use this to show which crafts need each item)
+    let crafts = {}
+    try {
+      const cres = await fetch(`${base}crafts.json`)
+      if (cres.ok) crafts = await cres.json()
+    } catch (e) {
+      // non-fatal; we'll still render the table without the "Needed For" column
+      console.warn('could not load crafts.json', e)
+    }
+
+    // build a lookup: normalized item name -> array of parent display names
+    const norm = s => String(s || '').toLowerCase().replace(/[^a-z0-9]+/g, '')
+    const craftMap = {}
+    // also build a simple mapping from craft key -> display name (used when data.json contains needed_for)
+    const craftDisplay = {}
+    for (const [key, val] of Object.entries(crafts || {})) {
+      const display = (val && val.display_name) || key.replace(/[-_]/g, ' ').replace(/\b\w/g, c => c.toUpperCase())
+      craftDisplay[key] = display
+      // val.needed_in is an array of parent keys (slugs); map those to display names
+      const parents = (val && val.needed_in) || []
+      const parentNames = parents.map(pk => {
+        const p = crafts[pk]
+        return (p && p.display_name) || pk.replace(/[-_]/g, ' ').replace(/\b\w/g, c => c.toUpperCase())
+      })
+      craftMap[norm(display)] = parentNames
+    }
+
+    // add derived fields: "safe to sell/recycle" and "Needed For"
+    items.value = data.map(d => {
+      const name = d.Name || d.name || ''
+      // prefer explicit `needed_for` on the data.json item (an array of craft keys)
+      const neededKeys = d.needed_for || d.neededFor || []
+      let neededNames = []
+      if (Array.isArray(neededKeys) && neededKeys.length) {
+        neededNames = neededKeys.map(k => craftDisplay[k] || String(k).replace(/[-_]/g, ' ').replace(/\b\w/g, c => c.toUpperCase()))
+      } else {
+        // Fallback: use the old heuristic of normalizing this item's name and looking up crafts that list it
+        neededNames = craftMap[norm(name)] || []
+      }
+
+      // clone the original object so we can safely remove raw keys later
+      const out = { ...d }
+      // add UI-friendly fields
+      out['safe to sell/recycle'] = d['Keep for Quests/Workshop'] == null
+      out['Needed For'] = neededNames.length ? neededNames.join(', ') : ''
+      return out
+    })
+
+    // Ensure any raw relation fields from data.json don't create duplicate columns.
+    for (const it of items.value) {
+      if (it.hasOwnProperty('needed_for')) delete it.needed_for
+      if (it.hasOwnProperty('neededFor')) delete it.neededFor
+    }
+
     columns.value = items.value.length ? Object.keys(items.value[0]) : []
   } catch (err) {
     console.error(err)
@@ -23,7 +93,17 @@ async function loadData() {
   }
 }
 
-onMounted(loadData)
+onMounted(() => {
+  // load content
+  loadData()
+  // synchronize theme with stored preference (preflight script sets class early to avoid flash)
+  try {
+    const stored = localStorage.getItem('theme')
+    if (stored) isDark.value = stored === 'dark'
+    else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) isDark.value = true
+  } catch (e) {}
+  applyTheme(isDark.value)
+})
 
 const filteredItems = computed(() => {
   if (!searchTerm.value) return items.value
@@ -115,6 +195,7 @@ function openItem(item) {
       <div class="controls">
         <input v-model="searchTerm" type="search" placeholder="Search items (any column)..." aria-label="Search" />
         <div class="count">Showing {{ filteredItems.length }} of {{ items.length }}</div>
+        <button class="theme-toggle" @click="toggleTheme" :aria-pressed="isDark" :title="isDark ? 'Switch to light' : 'Switch to dark'">{{ isDark ? '☀️' : '🌙' }}</button>
       </div>
 
       <div class="table-wrap">
@@ -150,37 +231,39 @@ function openItem(item) {
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
   padding-top: 1rem;
 }
-.subtitle { margin-top: 0; color: #555; }
-.loading { color: #666; }
-.error { color: #b00020; margin-bottom: 1rem; }
-.table-wrap { overflow-x: auto; border: 1px solid #e6e6e6; border-radius: 6px; }
+.subtitle { margin-top: 0; color: var(--muted); }
+.loading { color: var(--muted); }
+.error { color: var(--cross); margin-bottom: 1rem; }
+.table-wrap { overflow-x: auto; border: 1px solid var(--border); border-radius: 6px; }
 table { width: 100%; border-collapse: collapse; min-width: 700px; }
-th, td { padding: 0.5rem 0.75rem; border-bottom: 1px solid #eee; text-align: left; vertical-align: top; }
-thead th { position: sticky; top: 0; background: #fafafa; z-index: 2; font-weight: 600; }
-tr:nth-child(even) td { background: #fbfbfb; }
-code { background: #f3f4f6; padding: 0.1rem 0.35rem; border-radius: 4px; }
-.tick { color: #1f8a3d; font-weight: 700; }
-.cross { color: #b00020; font-weight: 700; }
+th, td { padding: 0.5rem 0.75rem; border-bottom: 1px solid var(--border); text-align: left; vertical-align: top; }
+thead th { position: sticky; top: 0; background: var(--header-bg); z-index: 2; font-weight: 600; }
+tr:nth-child(even) td { background: var(--row-alt-bg); }
+code { background: var(--code-bg); padding: 0.1rem 0.35rem; border-radius: 4px; }
+.tick { color: var(--tick); font-weight: 700; }
+.cross { color: var(--cross); font-weight: 700; }
 .controls { display:flex; gap:1rem; align-items:center; margin: 1rem 0; }
-.controls input[type="search"] { flex:1; padding:0.5rem 0.75rem; border:1px solid #dcdcdc; border-radius:6px; }
-.count { color:#555; font-size:0.95rem }
+.controls input[type="search"] { flex:1; padding:0.5rem 0.75rem; border:1px solid var(--input-border); border-radius:6px; background: var(--input-bg); color: var(--text); }
+.count { color:var(--muted); font-size:0.95rem }
 th.sortable { cursor: pointer; user-select: none; }
-.sort-indicator { margin-left: 0.35rem; color: #666; font-size: 0.9rem }
+.sort-indicator { margin-left: 0.35rem; color: var(--muted); font-size: 0.9rem }
 
 .clickable-row { cursor: pointer }
-.row-link { color: inherit; text-decoration: none; display: block }
+.row-link { color: var(--link); text-decoration: none; display: block }
 
+.theme-toggle { margin-left: 0.25rem }
 
 /* Responsive: transform table into vertical cards on small screens */
 @media (max-width: 768px) {
   .controls { flex-direction: column; align-items: stretch; }
   table { min-width: 100%; border: 0; }
   thead { display: none; }
-  tbody tr { display: block; margin: 0 0 12px 0; border: 1px solid #eee; border-radius: 8px; padding: 0.5rem; background: #fff; }
+  tbody tr { display: block; margin: 0 0 12px 0; border: 1px solid var(--border); border-radius: 8px; padding: 0.5rem; background: var(--table-bg); }
   tbody td { display: flex; justify-content: space-between; padding: 0.5rem 0; border: none; }
-  tbody td + td { border-top: 1px solid #f2f2f2; }
-  tbody td:before { content: attr(data-label); font-weight: 600; color: #333; margin-right: 0.5rem; flex: 0 0 55%; }
-  tbody td span { flex: 1; text-align: right; color: #111; }
+  tbody td + td { border-top: 1px solid rgba(0,0,0,0.04); }
+  tbody td:before { content: attr(data-label); font-weight: 600; color: var(--text); margin-right: 0.5rem; flex: 0 0 55%; }
+  tbody td span { flex: 1; text-align: right; color: var(--text); }
   .table-wrap { border: none; }
 }
 </style>
+ 
