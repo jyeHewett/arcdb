@@ -24,10 +24,17 @@ window.toggleTheme = function(){
 
 function updateToggleButton(isDark){
   try{
-    var btn = document.getElementById('dark-toggle-btn')
-    if (!btn) return
-    btn.textContent = isDark ? '☀️' : '🌙'
-    btn.title = isDark ? 'Switch to light' : 'Switch to dark'
+    var btnFloating = document.getElementById('dark-toggle-btn')
+    var btnHeader = document.getElementById('theme-toggle')
+    if (btnFloating) {
+      btnFloating.textContent = isDark ? '☀️' : '🌙'
+      btnFloating.title = isDark ? 'Switch to light' : 'Switch to dark'
+    }
+    if (btnHeader) {
+      btnHeader.textContent = isDark ? '☀️' : '🌙'
+      btnHeader.title = isDark ? 'Switch to light' : 'Switch to dark'
+      try { btnHeader.setAttribute('aria-pressed', isDark ? 'true' : 'false') } catch(e){}
+    }
   }catch(e){}
 }
 
@@ -48,6 +55,16 @@ function updateToggleButton(isDark){
       btn.title = isDark ? 'Switch to light' : 'Switch to dark'
       btn.onclick = function(e){ e.preventDefault(); window.toggleTheme() }
       document.body.appendChild(btn)
+      // Also update header toggle if present
+      updateToggleButton(isDark)
     }catch(e){ }
   }
 })()
+
+// Ensure header toggle state is correct on DOM ready
+;(function(){
+  try{
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', function(){ updateToggleButton(document.documentElement.classList.contains('dark')) })
+    else updateToggleButton(document.documentElement.classList.contains('dark'))
+  }catch(e){}
+})();
