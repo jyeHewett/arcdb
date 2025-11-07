@@ -24,12 +24,7 @@ window.toggleTheme = function(){
 
 function updateToggleButton(isDark){
   try{
-    var btnFloating = document.getElementById('dark-toggle-btn')
     var btnHeader = document.getElementById('theme-toggle')
-    if (btnFloating) {
-      btnFloating.textContent = isDark ? '☀️' : '🌙'
-      btnFloating.title = isDark ? 'Switch to light' : 'Switch to dark'
-    }
     if (btnHeader) {
       btnHeader.textContent = isDark ? '☀️' : '🌙'
       btnHeader.title = isDark ? 'Switch to light' : 'Switch to dark'
@@ -37,29 +32,6 @@ function updateToggleButton(isDark){
     }
   }catch(e){}
 }
-
-// Insert a small floating toggle button so static pages can switch themes
-;(function(){
-  try{
-    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', create)
-    else create()
-  }catch(e){ }
-  function create(){
-    try{
-      if (document.getElementById('dark-toggle-btn')) return
-      var btn = document.createElement('button')
-      btn.id = 'dark-toggle-btn'
-      btn.className = 'dark-toggle'
-      var isDark = document.documentElement.classList.contains('dark')
-      btn.textContent = isDark ? '☀️' : '🌙'
-      btn.title = isDark ? 'Switch to light' : 'Switch to dark'
-      btn.onclick = function(e){ e.preventDefault(); window.toggleTheme() }
-      document.body.appendChild(btn)
-      // Also update header toggle if present
-      updateToggleButton(isDark)
-    }catch(e){ }
-  }
-})()
 
 // Ensure header toggle state is correct on DOM ready
 ;(function(){
