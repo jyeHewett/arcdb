@@ -1,0 +1,34 @@
+name: Build & Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [ "main", "master" ]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20.19.0'
+          cache: 'npm'
+
+      - name: Install deps
+        run: npm ci
+        working-directory: ./arc-site
+
+      - name: Build
+        run: npm run build
+        working-directory: ./arc-site
+
+      - name: Deploy to gh-pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./arc-site/dist
+          publish_branch: gh-pages
+          # cname: example.com    # uncomment/set if you have a custom domain
