@@ -71,10 +71,12 @@ async function main() {
     <meta property="og:title" content="${escapeHtml(title)}" />
     <meta property="og:description" content="${escapeHtml(description)}" />
   <meta property="og:url" content="https://www.arcdb.site${siteBase}items/${slug}/" />
-  <meta property="og:image" content="https://www.arcdb.site/icon.svg" />
+    <meta property="og:image" content="https://www.arcdb.site/icon.svg" />
     <script type="application/ld+json">${JSON.stringify(jsonLd)}</script>
   <link rel="icon" href="/icon.svg" />
   <link rel="manifest" href="/manifest.webmanifest" />
+  <link rel="stylesheet" href="/dark-mode.css" />
+  <script defer src="/dark-mode.js"></script>
     <style>body{font-family:system-ui,Arial,sans-serif;max-width:900px;margin:2rem auto;padding:0 1rem}h1{margin:0 0.5rem}table{border-collapse:collapse;width:100%;margin-top:1rem}td,th{padding:.5rem;border:1px solid #ddd;text-align:left}</style>
   </head>
   <body>
