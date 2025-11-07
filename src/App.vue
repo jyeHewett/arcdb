@@ -1,6 +1,8 @@
 <script setup>
 import { ref, onMounted, computed } from 'vue'
 
+const BASE = import.meta.env.BASE_URL || '/'
+
 const items = ref([])
 const columns = ref([])
 const error = ref(null)
@@ -8,7 +10,8 @@ const searchTerm = ref('')
 
 async function loadData() {
   try {
-    const res = await fetch('/data.json')
+    // use Vite's runtime base so the request resolves correctly on GitHub Pages
+    const res = await fetch(`${import.meta.env.BASE_URL}data.json`)
     if (!res.ok) throw new Error(`HTTP ${res.status}`)
     const data = await res.json()
     // add derived field "safe to sell/recycle" based on Keep for Quests/Workshop
@@ -86,6 +89,18 @@ function formatValue(val) {
   if (typeof val === 'number') return val.toLocaleString()
   return String(val)
 }
+
+function slugify(name) {
+  return name.toString().toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '')
+}
+
+function openItem(item) {
+  const slug = slugify(item.Name || item.name || 'item')
+  // navigate to the static item page we generated
+  window.location.href = BASE + 'items/' + slug + '/'
+}
 </script>
 
 <template>
@@ -113,9 +128,11 @@ function formatValue(val) {
             </tr>
           </thead>
           <tbody>
-            <tr v-for="(item, idx) in sortedItems" :key="idx">
+            <tr v-for="(item, idx) in sortedItems" :key="idx" @click="openItem(item)" class="clickable-row" tabindex="0" @keydown.enter="openItem(item)">
               <td v-for="col in columns" :key="col" :data-label="col">
-                <span :class="{ tick: item[col] === true, cross: item[col] === false }">{{ formatValue(item[col]) }}</span>
+                <a :href="BASE + 'items/' + slugify(item.Name || item.name || 'item') + '/'" class="row-link">
+                  <span :class="{ tick: item[col] === true, cross: item[col] === false }">{{ formatValue(item[col]) }}</span>
+                </a>
               </td>
             </tr>
           </tbody>
@@ -149,6 +166,10 @@ code { background: #f3f4f6; padding: 0.1rem 0.35rem; border-radius: 4px; }
 .count { color:#555; font-size:0.95rem }
 th.sortable { cursor: pointer; user-select: none; }
 .sort-indicator { margin-left: 0.35rem; color: #666; font-size: 0.9rem }
+
+.clickable-row { cursor: pointer }
+.row-link { color: inherit; text-decoration: none; display: block }
+
 
 /* Responsive: transform table into vertical cards on small screens */
 @media (max-width: 768px) {
