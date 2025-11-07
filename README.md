@@ -36,3 +36,24 @@ npm run dev
 ```sh
 npm run build
 ```
+
+
+## Deployment & Production notes
+
+Before publishing, update the canonical/OG URLs in `index.html` (replace `https://example.com/`).
+
+- If deploying to GitHub Pages under `/repo-name/` set `base` in `vite.config.js` to `'/repo-name/'` and update `manifest.webmanifest` `start_url`.
+- For Netlify or Vercel, deploy the `dist/` folder (build output) and set proper caching headers: long cache for hashed assets, short/no-cache for `data.json` if it changes often.
+
+Quick verification after upgrading Node/npm and installing deps:
+
+```powershell
+cd arc-site
+npm ci
+npm run build
+npm run preview  # optional; serves the built site locally
+```
+
+Robots and sitemap are available at `/robots.txt` and `/sitemap.xml` (update sitemap URLs). 
+
+If you want, I can add a small GitHub Actions workflow that builds and deploys the site automatically on push.
