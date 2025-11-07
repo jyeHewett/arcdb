@@ -5,4 +5,16 @@
     <loc>https://www.arcdb.site/</loc>
     <priority>1.00</priority>
   </url>
+  <url>
+    <loc>https://www.arcdb.site/what-to-keep.html</loc>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.arcdb.site/what-to-sell.html</loc>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.arcdb.site/loot-guide.html</loc>
+    <priority>0.80</priority>
+  </url>
 </urlset>
