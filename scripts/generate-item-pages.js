@@ -36,7 +36,7 @@ async function main() {
   const outBase = path.join(publicDir, 'items')
   await ensureDir(outBase)
 
-  const siteBase = '/arcdb/' // repo base; keep in sync with vite.config.js
+  const siteBase = '/' // repo base; keep in sync with vite.config.js
 
   for (const item of data) {
     const name = item.Name || 'item'
@@ -59,26 +59,26 @@ async function main() {
       }))
     }
 
-    const html = `<!doctype html>
+  const html = `<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>${escapeHtml(title)}</title>
     <meta name="description" content="${escapeHtml(description)}" />
-    <link rel="canonical" href="https://jyehewett.github.io${siteBase}items/${slug}/" />
+  <link rel="canonical" href="https://www.arcdb.site${siteBase}items/${slug}/" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="${escapeHtml(title)}" />
     <meta property="og:description" content="${escapeHtml(description)}" />
-    <meta property="og:url" content="https://jyehewett.github.io${siteBase}items/${slug}/" />
-    <meta property="og:image" content="https://jyehewett.github.io${siteBase}icon.svg" />
+  <meta property="og:url" content="https://www.arcdb.site${siteBase}items/${slug}/" />
+  <meta property="og:image" content="https://www.arcdb.site/icon.svg" />
     <script type="application/ld+json">${JSON.stringify(jsonLd)}</script>
-    <link rel="icon" href="${siteBase}icon.svg" />
-    <link rel="manifest" href="${siteBase}manifest.webmanifest" />
+  <link rel="icon" href="/icon.svg" />
+  <link rel="manifest" href="/manifest.webmanifest" />
     <style>body{font-family:system-ui,Arial,sans-serif;max-width:900px;margin:2rem auto;padding:0 1rem}h1{margin:0 0.5rem}table{border-collapse:collapse;width:100%;margin-top:1rem}td,th{padding:.5rem;border:1px solid #ddd;text-align:left}</style>
   </head>
   <body>
-    <a href="${siteBase}">← Back to ARC Items Database</a>
+  <a href="/">← Back to ARC Items Database</a>
     <h1>${escapeHtml(name)}</h1>
     <p>${escapeHtml(description)}</p>
     <table>

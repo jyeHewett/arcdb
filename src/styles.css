@@ -62,3 +62,21 @@ body {
   font-size: 0.9rem;
 }
 .theme-toggle:focus { outline: 2px solid rgba(0,0,0,0.12); }
+
+/* Header layout and donate button */
+.site-header { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+.site-header h1 { margin: 0; }
+.header-actions { display: flex; align-items: center; gap: 0.5rem }
+.donate-btn {
+  display: inline-block;
+  background: linear-gradient(180deg, #ffefc6, #ffd27a);
+  color: #111;
+  padding: 0.4rem 0.7rem;
+  border-radius: 8px;
+  border: 1px solid rgba(0,0,0,0.08);
+  text-decoration: none;
+  font-weight: 600;
+  box-shadow: 0 1px 0 rgba(255,255,255,0.6) inset;
+}
+.donate-btn:hover { filter: brightness(0.98); }
+.dark .donate-btn { background: linear-gradient(180deg, #6b5638, #4f3f2b); color: var(--text); border-color: rgba(255,255,255,0.06); box-shadow: none }

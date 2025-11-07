@@ -3,5 +3,5 @@
 User-agent: *
 Allow: /
 
-# Sitemap location (update example.com to your domain)
-Sitemap: https://jyehewett.github.io/arcdb/sitemap.xml
+# Sitemap location (updated to custom domain)
+Sitemap: https://www.arcdb.site/sitemap.xml

@@ -225,8 +225,15 @@ function openItem(item) {
 
 <template>
   <div class="container">
-    <h1>ARC Items Database</h1>
-    <p class="subtitle">Browse and search ARC items (rarity, recycle outputs, price, and quest/workshop notes).</p>
+    <div class="site-header">
+      <div>
+        <h1>ARC Items Database</h1>
+        <p class="subtitle">Browse and search ARC items (rarity, recycle outputs, price, and quest/workshop notes).</p>
+      </div>
+      <div class="header-actions">
+        <a class="donate-btn" href="https://paypal.me/JyeHewett" target="_blank" rel="noopener noreferrer">Help with running costs without running ads</a>
+      </div>
+    </div>
 
     <div v-if="error" class="error">Error: {{ error }}</div>
     <div v-else-if="!items.length" class="loading">Loading…</div>
