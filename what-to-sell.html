@@ -13,13 +13,34 @@
     <meta property="og:image" content="https://www.arcdb.site/icon.svg" />
     <link rel="icon" href="/icon.svg" />
     <link rel="manifest" href="/manifest.webmanifest" />
+    <!-- Plausible analytics (privacy-friendly) -->
+    <script async src="https://plausible.io/js/pa-OScBs9iDSXtAap40Wgfm1.js"></script>
+    <script>
+      window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+      plausible.init()
+    </script>
+    <!-- Preflight theme: apply stored or system dark preference before paint -->
+    <script>
+      (function(){
+        try {
+          var t = localStorage.getItem('theme');
+          if (t === 'dark') document.documentElement.classList.add('dark');
+          else if (!t && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) document.documentElement.classList.add('dark');
+        } catch (e) { }
+      })();
+    </script>
     <style>body{font-family:system-ui,Arial,sans-serif;max-width:900px;margin:2rem auto;padding:0 1rem}h1{margin:0 0 0.5rem}section{margin:1rem 0}ul{margin:0.5rem 0 1rem 1.25rem}</style>
   </head>
   <body>
-    <header>
-      <h1>What to Sell in ARC Raiders</h1>
-      <p>Short answer: sell common resources, duplicates, and items that are not required for quests or workshop recipes. Prioritize clearing low-value items to make room for rarer loot.</p>
-    </header>
+    <div class="site-header" style="display:flex;justify-content:space-between;align-items:flex-start;gap:1rem">
+      <div>
+        <h1>ARC Items Database — What to Sell</h1>
+        <p class="subtitle" style="margin-top:0;color:#666">Browse items and check sell price, rarity, and workshop/quest relevance.</p>
+      </div>
+      <div class="header-actions">
+        <a class="donate-btn" href="https://paypal.me/JyeHewett" target="_blank" rel="noopener noreferrer" onclick="try{if(window.plausible)plausible('Donate')}catch(e){}" style="background:#0a84ff;color:#fff;padding:0.5rem 0.75rem;border-radius:6px;text-decoration:none">Help keep this site alive</a>
+      </div>
+    </div>
 
     <!-- Embedded interactive table (same as homepage table) -->
     <section id="arc-table" style="max-width:900px;margin:1.5rem auto;padding:1rem;border:1px solid #e6e6e6;border-radius:8px;background:#fff">
@@ -179,13 +200,13 @@
     </main>
     
     <!-- Dynamic top-sell list generated from public/data.json; inserted at bottom only -->
-    <section id="top-sell-dynamic" style="max-width:900px;margin:2rem auto;padding:1rem;border:1px solid #e6e6e6;border-radius:8px;background:#fff">
+  <section id="top-sell-dynamic" style="max-width:900px;margin:2rem auto;padding:1rem;border:1px solid #e6e6e6;border-radius:8px;background:#fff">
       <h2>Top items suggested to sell (generated from site data)</h2>
       <p>These are high-value items that are not marked for quests/workshop and are not used as components in recipes. This list is generated from the site's data.</p>
       <ol id="top-sell-list"><li>Loading…</li></ol>
     </section>
 
-    <script>
+  <script>
     (async function(){
       try {
         const res = await fetch('/data.json')
@@ -227,5 +248,16 @@
       }
     })()
     </script>
+
+    <footer class="site-footer" style="max-width:900px;margin:2rem auto;padding:1rem;padding-top:0">
+      <div class="footer-inner" style="display:flex;justify-content:space-between;align-items:center;color:#666">
+        <div>© ARC Items Database</div>
+        <div><a href="#" class="privacy-link" onclick="(function(e){e.preventDefault();var p=document.getElementById('privacy-panel');p.style.display=p.style.display==='block'?'none':'block'})(event)" style="color:#0a84ff;text-decoration:underline">Privacy</a></div>
+      </div>
+      <div id="privacy-panel" style="display:none;margin-top:0.75rem;padding:1rem;border:1px solid #e6e6e6;border-radius:8px;background:#fff;color:#222">
+        <h3 style="margin-top:0">Privacy notice (Plausible — cookieless)</h3>
+        <p>We use Plausible for privacy-friendly analytics. Plausible does not use cookies and does not track individual users across sites.</p>
+      </div>
+    </footer>
   </body>
 </html>
