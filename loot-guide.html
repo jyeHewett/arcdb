@@ -109,13 +109,10 @@
 
         for (const it of list) {
           const tr = document.createElement('tr')
-          tr.style.borderBottom = '1px solid #eee'
-          tr.style.cursor = 'pointer'
+          tr.className = 'clickable-row'
           tr.addEventListener('click', ()=>{ window.location.href = '/items/' + slugify(it.Name) + '/' })
           for (const col of columns) {
             const td = document.createElement('td')
-            td.style.padding = '0.5rem 0.75rem'
-            td.style.verticalAlign = 'top'
             td.textContent = (it[col] !== undefined && it[col] !== null) ? String(it[col]) : ''
             tr.appendChild(td)
           }
@@ -130,10 +127,7 @@
         for (const col of columns) {
           const th = document.createElement('th')
           th.textContent = col
-          th.style.padding = '0.5rem 0.75rem'
-          th.style.textAlign = 'left'
-          th.style.cursor = 'pointer'
-          th.style.background = '#fafafa'
+          th.className = 'sortable'
           th.addEventListener('click', ()=>{
             if (sortCol === col) sortDir = sortDir === 'asc' ? 'desc' : 'asc'
             else { sortCol = col; sortDir = 'asc' }
