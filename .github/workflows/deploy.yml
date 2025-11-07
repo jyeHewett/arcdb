@@ -31,4 +31,3 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./arc-site/dist
           publish_branch: gh-pages
-          # cname: example.com    # uncomment/set if you have a custom domain

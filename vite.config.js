@@ -8,7 +8,7 @@ import vueDevTools from 'vite-plugin-vue-devtools'
 export default defineConfig(({ command, mode }) => {
   const isProd = mode === 'production'
   return {
-    base: isProd ? '/' : '/',
+    base: '/arcdb/',
     plugins: [
       vue(),
       // include devtools only in non-production modes
