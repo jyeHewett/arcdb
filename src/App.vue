@@ -156,6 +156,9 @@ const filteredItems = computed(() => {
   })
 })
 
+// Top items to sell: filter items that are safe to sell and have a numeric Sell Price,
+// (Removed) top-sell list moved to the standalone what-to-sell page; keep logic there.
+
 // sorting state and logic
 const sortColumn = ref(null)
 const sortDir = ref('asc') // 'asc' or 'desc'
@@ -221,6 +224,12 @@ function openItem(item) {
   // navigate to the static item page we generated
   window.location.href = BASE + 'items/' + slug + '/'
 }
+
+// privacy panel control and Plausible tracker
+const showPrivacy = ref(false)
+function trackDonate() {
+  try { if (window.plausible) window.plausible('Donate') } catch (e) { /* ignore */ }
+}
 </script>
 
 <template>
@@ -231,7 +240,7 @@ function openItem(item) {
         <p class="subtitle">Browse and search ARC items (rarity, recycle outputs, price, and quest/workshop notes).</p>
       </div>
       <div class="header-actions">
-        <a class="donate-btn" href="https://paypal.me/JyeHewett" target="_blank" rel="noopener noreferrer">Help with running costs without running ads</a>
+        <a class="donate-btn" href="https://paypal.me/JyeHewett" target="_blank" rel="noopener noreferrer" @click="trackDonate">Help with running costs without running ads</a>
       </div>
     </div>
 
@@ -268,6 +277,20 @@ function openItem(item) {
       </div>
     </div>
   </div>
+
+    <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="copyright">© ARC Items Database</div>
+      <div class="footer-links">
+        <a href="#" class="privacy-link" @click.prevent="showPrivacy = !showPrivacy">Privacy</a>
+      </div>
+    </div>
+    <div v-show="showPrivacy" class="privacy-panel" role="dialog" aria-hidden="false">
+      <h3>Privacy notice (Plausible — cookieless)</h3>
+      <p>We use Plausible for privacy-friendly, cookieless analytics to measure traffic (pageviews, unique visitors, referrers). Plausible does not use cookies and does not track individual users across sites.</p>
+      <p>Data collected: aggregated, non-identifying request data (requested URL, referrer, timestamp, basic browser details). We do not collect personal identifiers. For details see <a href="https://plausible.io/privacy" target="_blank" rel="noopener noreferrer">Plausible Privacy</a>.</p>
+    </div>
+  </footer>
 </template>
 
 <style scoped>
@@ -312,5 +335,14 @@ th.sortable { cursor: pointer; user-select: none; }
   tbody td span { flex: 1; text-align: right; color: var(--text); }
   .table-wrap { border: none; }
 }
+
+/* Footer & privacy panel */
+.site-footer { max-width: 1200px; margin: 2rem auto; padding: 1rem; padding-top: 0; }
+.footer-inner { display:flex; justify-content:space-between; align-items:center; gap:1rem; color:var(--muted); }
+.privacy-link { color:var(--link); text-decoration:underline; cursor:pointer }
+.privacy-panel { margin-top:0.75rem; padding:1rem; border:1px solid var(--border); border-radius:8px; background:var(--table-bg); color:var(--text); }
+.privacy-panel h3 { margin-top:0; }
+
+/* (removed) top-sell styles - feature moved to standalone page */
 </style>
  

@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>ARC Raiders — What to Sell</title>
+    <meta name="description" content="What to sell in ARC Raiders: tips for freeing inventory and maximizing profit by selling low-value items and duplicates." />
+    <link rel="canonical" href="https://www.arcdb.site/what-to-sell.html" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="ARC Raiders — What to Sell" />
+    <meta property="og:description" content="What to sell in ARC Raiders: tips for freeing inventory and maximizing profit by selling low-value items and duplicates." />
+    <meta property="og:url" content="https://www.arcdb.site/what-to-sell.html" />
+    <meta property="og:image" content="https://www.arcdb.site/icon.svg" />
+    <link rel="icon" href="/icon.svg" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <!-- Plausible analytics (privacy-friendly) -->
+    <script async src="https://plausible.io/js/pa-OScBs9iDSXtAap40Wgfm1.js"></script>
+    <script>
+      window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+      plausible.init()
+    </script>
+    <!-- Preflight theme: apply stored or system dark preference before paint -->
+    <script>
+      (function(){
+        try {
+          var t = localStorage.getItem('theme');
+          if (t === 'dark') document.documentElement.classList.add('dark');
+          else if (!t && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) document.documentElement.classList.add('dark');
+        } catch (e) { }
+      })();
+    </script>
+    <style>body{font-family:system-ui,Arial,sans-serif;max-width:900px;margin:2rem auto;padding:0 1rem}h1{margin:0 0 0.5rem}section{margin:1rem 0}ul{margin:0.5rem 0 1rem 1.25rem}</style>
+  </head>
+  <body>
+    <div class="site-header" style="display:flex;justify-content:space-between;align-items:flex-start;gap:1rem">
+      <div>
+        <h1>ARC Items Database — What to Sell</h1>
+        <p class="subtitle" style="margin-top:0;color:#666">Browse items and check sell price, rarity, and workshop/quest relevance.</p>
+      </div>
+      <div class="header-actions">
+        <a class="donate-btn" href="https://paypal.me/JyeHewett" target="_blank" rel="noopener noreferrer" onclick="try{if(window.plausible)plausible('Donate')}catch(e){}" style="background:#0a84ff;color:#fff;padding:0.5rem 0.75rem;border-radius:6px;text-decoration:none">Help keep this site alive</a>
+      </div>
+    </div>
+
+    <!-- Embedded interactive table (same as homepage table) -->
+    <section id="arc-table" style="max-width:900px;margin:1.5rem auto;padding:1rem;border:1px solid #e6e6e6;border-radius:8px;background:#fff">
+      <div style="display:flex;gap:0.75rem;align-items:center;margin-bottom:0.75rem">
+        <input id="arc-search" type="search" placeholder="Search items (any column)..." style="flex:1;padding:0.5rem;border:1px solid #ddd;border-radius:6px" />
+        <div id="arc-count" style="color:#666;font-size:0.95rem">Loading…</div>
+      </div>
+      <div style="overflow-x:auto">
+        <table id="arc-table-el" style="width:100%;border-collapse:collapse;min-width:600px">
+          <thead></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+
+    <script>
+    (function(){
+      const el = (sel,ctx=document) => ctx.querySelector(sel)
+      const search = el('#arc-search')
+      const count = el('#arc-count')
+      const table = el('#arc-table-el')
+      const thead = table.querySelector('thead')
+      const tbody = table.querySelector('tbody')
+      let items = []
+      let columns = []
+      let sortCol = null, sortDir = 'asc'
+
+      function slugify(name){ return String(name||'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'') }
+
+      function normalizeData(raw){
+        if (!Array.isArray(raw)) return raw || []
+        return raw.map(item => {
+          if (item && item.Name) return item
+          const out = {}
+          out['Name'] = item.n || item.Name || ''
+          if (item.r !== undefined) out['Rarity'] = item.r
+          else if (item.Rarity !== undefined) out['Rarity'] = item.Rarity
+          out['Recycles To'] = item.rt !== undefined ? item.rt : item['Recycles To']
+          out['Sell Price'] = item.sp !== undefined ? item.sp : item['Sell Price']
+          out['Category'] = item.c !== undefined ? item.c : item['Category']
+          out['Keep for Quests/Workshop'] = item.k !== undefined ? item.k : item['Keep for Quests/Workshop']
+          out['Needed For'] = item.nf !== undefined ? (Array.isArray(item.nf)?item.nf.join(', '):item.nf) : (item.needed_for || item.neededFor || '')
+          return out
+        })
+      }
+
+      function renderTable() {
+        tbody.innerHTML = ''
+        const q = (search.value||'').trim().toLowerCase()
+        let list = items.slice()
+        if (q) list = list.filter(it => Object.values(it).some(v=> v!=null && String(v).toLowerCase().includes(q)))
+        // sort
+        if (sortCol) {
+          list.sort((a,b)=>{
+            const va = a[sortCol], vb = b[sortCol]
+            if (va==null && vb==null) return 0
+            if (va==null) return 1
+            if (vb==null) return -1
+            const na = Number(va), nb = Number(vb)
+            if (!Number.isNaN(na) && !Number.isNaN(nb)) return na - nb
+            return String(va).localeCompare(String(vb), undefined, {sensitivity:'base'})
+          })
+          if (sortDir === 'desc') list.reverse()
+        }
+
+        for (const it of list) {
+          const tr = document.createElement('tr')
+          tr.style.borderBottom = '1px solid #eee'
+          tr.style.cursor = 'pointer'
+          tr.addEventListener('click', ()=>{ window.location.href = '/items/' + slugify(it.Name) + '/' })
+          for (const col of columns) {
+            const td = document.createElement('td')
+            td.style.padding = '0.5rem 0.75rem'
+            td.style.verticalAlign = 'top'
+            td.textContent = (it[col] !== undefined && it[col] !== null) ? String(it[col]) : ''
+            tr.appendChild(td)
+          }
+          tbody.appendChild(tr)
+        }
+        count.textContent = `Showing ${list.length} of ${items.length}`
+      }
+
+      function renderHeader(){
+        thead.innerHTML = ''
+        const tr = document.createElement('tr')
+        for (const col of columns) {
+          const th = document.createElement('th')
+          th.textContent = col
+          th.style.padding = '0.5rem 0.75rem'
+          th.style.textAlign = 'left'
+          th.style.cursor = 'pointer'
+          th.style.background = '#fafafa'
+          th.addEventListener('click', ()=>{
+            if (sortCol === col) sortDir = sortDir === 'asc' ? 'desc' : 'asc'
+            else { sortCol = col; sortDir = 'asc' }
+            renderTable()
+          })
+          tr.appendChild(th)
+        }
+        thead.appendChild(tr)
+      }
+
+      async function init(){
+        try{
+          const res = await fetch('/data.json')
+          if (!res.ok) throw new Error('data.json not found')
+          const raw = await res.json()
+          items = normalizeData(raw)
+          columns = items.length ? Object.keys(items[0]) : ['Name','Sell Price']
+          renderHeader()
+          renderTable()
+        }catch(e){
+          tbody.innerHTML = '<tr><td>Error loading table</td></tr>'
+          console.error(e)
+        }
+      }
+
+      search.addEventListener('input', ()=> renderTable())
+      init()
+    })()
+    </script>
+
+    <main>
+      <section>
+        <h2>Sell these first</h2>
+        <ul>
+          <li>Common crafting materials (if you have large stacks)</li>
+          <li>Duplicate low-rarity items not used in recipes</li>
+          <li>Items with low sell price and no 'Keep' flag</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>When to hold off selling</h2>
+        <p>Do not sell items flagged as 'Keep for Quests/Workshop' or rare components needed for crafting. If unsure, check this site's item details before selling.</p>
+      </section>
+
+      <!-- FAQ JSON-LD placed at the bottom per instructions -->
+      <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Is it safe to sell common materials?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Yes. Sell common materials when you have large stacks and don't need them for recipes or quests." }
+          },
+          {
+            "@type": "Question",
+            "name": "What should I never sell?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Never sell items labeled 'Keep for Quests/Workshop' or rare components needed for crafting advanced items." }
+          }
+        ]
+      }
+      </script>
+    </main>
+    
+    <!-- Dynamic top-sell list generated from public/data.json; inserted at bottom only -->
+  <section id="top-sell-dynamic" style="max-width:900px;margin:2rem auto;padding:1rem;border:1px solid #e6e6e6;border-radius:8px;background:#fff">
+      <h2>Top items suggested to sell (generated from site data)</h2>
+      <p>These are high-value items that are not marked for quests/workshop and are not used as components in recipes. This list is generated from the site's data.</p>
+      <ol id="top-sell-list"><li>Loading…</li></ol>
+    </section>
+
+  <script>
+    (async function(){
+      try {
+        const res = await fetch('/data.json')
+        if (!res.ok) throw new Error('data.json not found')
+        const data = await res.json()
+        const normSlug = s => String(s||'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'')
+        const candidates = (data || []).filter(it => {
+          if (!it) return false
+          const keep = it['Keep for Quests/Workshop']
+          // exclude if Keep set (non-null/empty string)
+          if (keep !== null && keep !== undefined && String(keep).trim() !== '') return false
+          const needed = it.needed_for || it.neededFor
+          // exclude if used in crafting (has needed_for entries)
+          if (Array.isArray(needed) && needed.length) return false
+          const price = Number(it['Sell Price'])
+          return !Number.isNaN(price) && price > 0
+        })
+        candidates.sort((a,b) => (Number(b['Sell Price'])||0) - (Number(a['Sell Price'])||0))
+        const top = candidates.slice(0,20)
+        const list = document.getElementById('top-sell-list')
+        list.innerHTML = ''
+        if (!top.length) { list.innerHTML = '<li>No sellable items found.</li>'; return }
+        for (const it of top) {
+          const name = it.Name || it.n || ''
+          const price = Number(it['Sell Price']) || 0
+          const slug = normSlug(name)
+          const li = document.createElement('li')
+          const a = document.createElement('a')
+          a.href = '/items/' + slug + '/'
+          a.textContent = name
+          li.appendChild(a)
+          li.appendChild(document.createTextNode(' — ' + price.toLocaleString()))
+          list.appendChild(li)
+        }
+      } catch (e) {
+        const list = document.getElementById('top-sell-list')
+        list.innerHTML = '<li>Error loading sellable items</li>'
+        console.error(e)
+      }
+    })()
+    </script>
+
+    <footer class="site-footer" style="max-width:900px;margin:2rem auto;padding:1rem;padding-top:0">
+      <div class="footer-inner" style="display:flex;justify-content:space-between;align-items:center;color:#666">
+        <div>© ARC Items Database</div>
+        <div><a href="#" class="privacy-link" onclick="(function(e){e.preventDefault();var p=document.getElementById('privacy-panel');p.style.display=p.style.display==='block'?'none':'block'})(event)" style="color:#0a84ff;text-decoration:underline">Privacy</a></div>
+      </div>
+      <div id="privacy-panel" style="display:none;margin-top:0.75rem;padding:1rem;border:1px solid #e6e6e6;border-radius:8px;background:#fff;color:#222">
+        <h3 style="margin-top:0">Privacy notice (Plausible — cookieless)</h3>
+        <p>We use Plausible for privacy-friendly analytics. Plausible does not use cookies and does not track individual users across sites.</p>
+      </div>
+    </footer>
+  </body>
+</html>
