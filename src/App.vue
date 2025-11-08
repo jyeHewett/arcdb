@@ -240,7 +240,7 @@ function trackDonate() {
         <p class="subtitle">Browse and search ARC items (rarity, recycle outputs, price, and quest/workshop notes).</p>
       </div>
       <div class="header-actions">
-        <a class="donate-btn" href="https://paypal.me/JyeHewett" target="_blank" rel="noopener noreferrer" @click="trackDonate">Help with running costs without running ads</a>
+        <a class="donate-btn kofi-btn" href="https://ko-fi.com/Y8Y81O3441" target="_blank" rel="noopener noreferrer">Support me on Ko-fi</a>
       </div>
     </div>
 
@@ -342,6 +342,11 @@ th.sortable { cursor: pointer; user-select: none; }
 .privacy-link { color:var(--link); text-decoration:underline; cursor:pointer }
 .privacy-panel { margin-top:0.75rem; padding:1rem; border:1px solid var(--border); border-radius:8px; background:var(--table-bg); color:var(--text); }
 .privacy-panel h3 { margin-top:0; }
+
+/* Ko-fi button styling */
+.kofi-btn {
+  background: #72a4f2 !important;
+}
 
 /* (removed) top-sell styles - feature moved to standalone page */
 </style>
