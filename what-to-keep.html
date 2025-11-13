@@ -3,12 +3,13 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>ARC Raiders — What to Keep</title>
-    <meta name="description" content="What to keep in ARC Raiders: quick guide to the items you should retain, why they matter, and a short checklist." />
+    <title>ARC Raiders What to Keep Guide | Essential Items to Save</title>
+    <meta name="description" content="ARC Raiders what to keep guide: essential items for quests, workshop crafting, and progression. Learn which items to never sell and what materials to stockpile for success." />
+    <meta name="keywords" content="arc raiders what to keep, arc raiders items to keep, arc raiders essential items, arc raiders crafting materials, arc raiders quest items">
     <link rel="canonical" href="https://www.arcdb.site/what-to-keep.html" />
     <meta property="og:type" content="article" />
-    <meta property="og:title" content="ARC Raiders — What to Keep" />
-    <meta property="og:description" content="What to keep in ARC Raiders: quick guide to the items you should retain, why they matter, and a short checklist." />
+    <meta property="og:title" content="ARC Raiders What to Keep Guide | Essential Items" />
+    <meta property="og:description" content="ARC Raiders what to keep guide: essential items for quests, workshop crafting, and progression. Learn which items to never sell and what materials to stockpile." />
     <meta property="og:url" content="https://www.arcdb.site/what-to-keep.html" />
   <meta property="og:image" content="https://www.arcdb.site/icon.svg" />
   <link rel="icon" href="/icon.svg" />
@@ -36,13 +37,14 @@
     <div class="container">
       <div class="site-header">
         <div>
-          <h1>ARC Items Database — What to Keep</h1>
-          <p class="subtitle">Browse items and check sell price, rarity, and workshop/quest relevance.</p>
+          <h1>ARC Raiders What to Keep Guide</h1>
+          <p class="subtitle">Essential ARC Raiders items to keep: find which items are critical for quests, workshop crafting, and game progression. Never accidentally sell important materials again.</p>
         </div>
         <div class="header-actions">
           <a class="donate-btn" href="https://paypal.me/JyeHewett" target="_blank" rel="noopener noreferrer" onclick="try{if(window.plausible)plausible('Donate')}catch(e){}">Help keep this site alive</a>
         </div>
       </div>
+
 
       <div class="controls">
         <input id="arc-search" class="arc-search" type="search" placeholder="Search items (any column)..." aria-label="Search items" />
@@ -56,6 +58,16 @@
           <tbody></tbody>
         </table>
       </div>
+
+      <nav class="guide-nav" style="background:#222;color:#eee;padding:1rem;margin:1rem 0;border-radius:4px">
+        <h3 style="margin-top:0">ARC Raiders Guides</h3>
+        <ul style="list-style:none;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:0.5rem">
+          <li><a href="/" style="color:#66aaff;text-decoration:none">🏠 Items Database</a></li>
+          <li><strong style="color:#fff">✅ What to Keep (Current)</strong></li>
+          <li><a href="/what-to-sell.html" style="color:#66aaff;text-decoration:none">💰 What to Sell</a></li>
+          <li><a href="/loot-guide.html" style="color:#66aaff;text-decoration:none">📦 Loot Farming Guide</a></li>
+        </ul>
+      </nav>
 
     <script>
     (function(){
@@ -91,7 +103,7 @@
       function renderTable() {
         tbody.innerHTML = ''
         const q = (search.value||'').trim().toLowerCase()
-        let list = items.slice()
+        let list = items.slice();
         if (q) list = list.filter(it => Object.values(it).some(v=> v!=null && String(v).toLowerCase().includes(q)))
         if (sortCol) {
           list.sort((a,b)=>{
@@ -159,26 +171,79 @@
 
     <main>
       <section>
-        <h2>Quick checklist — keep these</h2>
+        <h2>ARC Raiders Essential Items: What to Keep</h2>
+        <p>In ARC Raiders, keeping the right items is crucial for progression. This guide identifies the essential items you should always keep in your inventory, organized by importance and use case.</p>
+        
+        <h3>Always Keep - Top Priority Items</h3>
         <ul>
-          <li>Arc Alloy / Arc Circuitry — high-value crafting components</li>
-          <li>Arc Powercells — used in many advanced recipes</li>
-          <li>Items marked "Keep for Quests/Workshop" — required for story/event progression</li>
-          <li>Rare components from named enemies or high-tier loot sources</li>
+          <li><strong>Arc Alloy</strong> - High-value crafting component used in advanced recipes. Keep minimum 10-20 units.</li>
+          <li><strong>Arc Circuitry</strong> - Essential for electronic crafting. Always keep available stock.</li>
+          <li><strong>Arc Powercells</strong> - Used in many advanced recipes and modifications. Never sell these.</li>
+          <li><strong>Advanced Arc Powercell</strong> - Even rarer than standard powercells, critical for top-tier crafting.</li>
+          <li><strong>Items marked "Keep for Quests/Workshop"</strong> - Required for story/event progression and crafting.</li>
+        </ul>
+
+        <h3>Important Crafting Materials to Stockpile</h3>
+        <ul>
+          <li><strong>Arc Performance Steel</strong> - High-tier material for weapon and armor crafting</li>
+          <li><strong>Arc Synthetic Resin</strong> - Needed for multiple workshop recipes</li>
+          <li><strong>Arc Flex Rubber</strong> - Used in equipment modifications</li>
+          <li><strong>Arc Motion Core</strong> - Rare component for advanced items</li>
+          <li><strong>Electrical/Mechanical Components (Advanced)</strong> - Mid-to-high tier crafting essentials</li>
         </ul>
       </section>
 
       <section>
-        <h2>How to prioritize</h2>
-        <p>When inventory is tight, first keep anything rare or required by current workshop recipes and quests. Sell common materials you have in bulk and items not listed as keep.</p>
+        <h2>How to Identify Items to Keep in ARC Raiders</h2>
+        <p>Use the searchable database above to quickly check any item. Look for these indicators that an item should be kept:</p>
+        <ul>
+          <li><strong>"Keep for Quests/Workshop" flag</strong> - The most important indicator</li>
+          <li><strong>Uncommon or Rare rarity</strong> - Higher rarity often means harder to find</li>
+          <li><strong>"Needed For" field populated</strong> - Item is used in crafting recipes</li>
+          <li><strong>High sell price (500+)</strong> - Even if you can sell it, consider keeping for later</li>
+          <li><strong>Arc-prefixed items</strong> - Almost all Arc materials are valuable</li>
+        </ul>
       </section>
 
       <section>
-        <h2>Quick reference</h2>
-        <p>Use item detail pages on this site to check the "Keep for Quests/Workshop" flag — if present, keep the item. Otherwise consider rarity and sell price.</p>
-  </section>
+        <h2>ARC Raiders Quest and Workshop Items</h2>
+        <p>Many items in ARC Raiders are specifically needed for quest completion or workshop crafting. These items show specific quest/workshop counts in the database:</p>
+        <ul>
+          <li>Quest items with specific location requirements (keys, access cards)</li>
+          <li>Workshop materials showing counts like "18x Workshop 80x Expedition"</li>
+          <li>Components from named enemies (Hornet Driver, Wasp Driver, etc.)</li>
+          <li>Special cells and cores (Bastion Cell, Queen Reactor, etc.)</li>
+        </ul>
+        <p>Always check the database before selling to see if an item has quest or workshop requirements.</p>
+      </section>
 
-  <!-- FAQ JSON-LD placed at the bottom per instructions -->
+      <section>
+        <h2>Quick Priority System for ARC Raiders Inventory</h2>
+        <p>When inventory is tight, use this priority system to decide what to keep:</p>
+        <ol>
+          <li><strong>Priority 1:</strong> Items flagged for Quests/Workshop - never sell</li>
+          <li><strong>Priority 2:</strong> Arc-prefixed materials and advanced components</li>
+          <li><strong>Priority 3:</strong> Rare components from named enemies</li>
+          <li><strong>Priority 4:</strong> Uncommon crafting materials you use frequently</li>
+          <li><strong>Priority 5:</strong> Common materials (keep 5-10 of each)</li>
+        </ol>
+      </section>
+
+      <section>
+        <h2>ARC Raiders Material Stocking Recommendations</h2>
+        <p>Optimal inventory levels for common materials in ARC Raiders:</p>
+        <ul>
+          <li>Arc Alloy: 10-20 units</li>
+          <li>Arc Circuitry: 5-15 units</li>
+          <li>Arc Powercells: All you can get</li>
+          <li>Metal Parts: 20-50 units</li>
+          <li>Electrical Components: 10-30 units</li>
+          <li>Mechanical Components: 10-30 units</li>
+          <li>Common materials: 5-10 units each</li>
+        </ul>
+      </section>
+
+      <!-- FAQ JSON-LD placed at the bottom per instructions -->
       <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -186,13 +251,23 @@
         "mainEntity": [
           {
             "@type": "Question",
-            "name": "What items should I always keep?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Always keep rare components, Arc Powercells, and items explicitly marked 'Keep for Quests/Workshop'." }
+            "name": "What items should I always keep in ARC Raiders?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Always keep rare components like Arc Powercells, Arc Alloy, and Arc Circuitry. Also keep any items explicitly marked 'Keep for Quests/Workshop' and rare drops from named enemies. These are essential for crafting and progression." }
           },
           {
             "@type": "Question",
-            "name": "Can I sell common materials?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Yes — common resources and low-value items that aren't used in recipes can be sold to free inventory space." }
+            "name": "How do I know if an item is important in ARC Raiders?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Check if the item has a 'Keep for Quests/Workshop' flag, has uncommon or rare rarity, is listed in 'needed_for' crafting recipes, or has the 'Arc' prefix. These indicators suggest the item is important to keep." }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I sell common materials in ARC Raiders?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Yes, you can sell common resources and low-value items that aren't used in recipes or marked for quests. However, keep at least 5-10 of each common material for emergencies and crafting needs." }
+          },
+          {
+            "@type": "Question",
+            "name": "What are Arc Powercells used for in ARC Raiders?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Arc Powercells are used in many advanced recipes and modifications in ARC Raiders. They are essential crafting components that should never be sold, as they're needed for high-tier equipment and quest progression." }
           }
         ]
       }

@@ -3,12 +3,13 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>ARC Raiders — What to Sell</title>
-    <meta name="description" content="What to sell in ARC Raiders: tips for freeing inventory and maximizing profit by selling low-value items and duplicates." />
+    <title>ARC Raiders What to Sell Guide | Best Items to Sell for Profit</title>
+    <meta name="description" content="ARC Raiders what to sell guide: learn which items to sell first, maximize profit from your inventory, and identify low-value items safe to sell. Complete selling strategy for ARC Raiders." />
+    <meta name="keywords" content="arc raiders what to sell, arc raiders selling guide, arc raiders best items to sell, arc raiders vendor guide, arc raiders inventory management">
     <link rel="canonical" href="https://www.arcdb.site/what-to-sell.html" />
     <meta property="og:type" content="article" />
-    <meta property="og:title" content="ARC Raiders — What to Sell" />
-    <meta property="og:description" content="What to sell in ARC Raiders: tips for freeing inventory and maximizing profit by selling low-value items and duplicates." />
+    <meta property="og:title" content="ARC Raiders What to Sell Guide | Best Items to Sell" />
+    <meta property="og:description" content="ARC Raiders what to sell guide: learn which items to sell first, maximize profit from your inventory, and identify low-value items safe to sell." />
     <meta property="og:url" content="https://www.arcdb.site/what-to-sell.html" />
   <meta property="og:image" content="https://www.arcdb.site/icon.svg" />
   <link rel="icon" href="/icon.svg" />
@@ -36,13 +37,14 @@
     <div class="container">
       <div class="site-header">
         <div>
-          <h1>ARC Items Database — What to Sell</h1>
-          <p class="subtitle">Browse items and check sell price, rarity, and workshop/quest relevance.</p>
+          <h1>ARC Raiders What to Sell Guide</h1>
+          <p class="subtitle">Complete ARC Raiders selling guide: find the best items to sell, high-value vendor items, and what's safe to get rid of to maximize inventory space.</p>
         </div>
         <div class="header-actions">
           <a class="donate-btn" href="https://paypal.me/JyeHewett" target="_blank" rel="noopener noreferrer" onclick="try{if(window.plausible)plausible('Donate')}catch(e){}">Help keep this site alive</a>
         </div>
       </div>
+
 
       <div class="controls">
         <input id="arc-search" class="arc-search" type="search" placeholder="Search items (any column)..." aria-label="Search items" />
@@ -56,6 +58,16 @@
           <tbody></tbody>
         </table>
       </div>
+
+      <nav class="guide-nav" style="background:#222;color:#eee;padding:1rem;margin:1rem 0;border-radius:4px">
+        <h3 style="margin-top:0">ARC Raiders Guides</h3>
+        <ul style="list-style:none;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:0.5rem">
+          <li><a href="/" style="color:#66aaff;text-decoration:none">🏠 Items Database</a></li>
+          <li><a href="/what-to-keep.html" style="color:#66aaff;text-decoration:none">✅ What to Keep</a></li>
+          <li><strong style="color:#fff">💰 What to Sell (Current)</strong></li>
+          <li><a href="/loot-guide.html" style="color:#66aaff;text-decoration:none">📦 Loot Farming Guide</a></li>
+        </ul>
+      </nav>
 
     <script>
     (function(){
@@ -91,8 +103,8 @@
       function renderTable() {
         tbody.innerHTML = ''
         const q = (search.value||'').trim().toLowerCase()
-        let list = items.slice()
-        if (q) list = list.filter(it => Object.values(it).some(v=> v!=null && String(v).toLowerCase().includes(q)))
+  let list = items.slice()
+  if (q) list = list.filter(it => Object.values(it).some(v=> v!=null && String(v).toLowerCase().includes(q)))
         // sort
         if (sortCol) {
           list.sort((a,b)=>{
@@ -160,17 +172,50 @@
 
     <main>
       <section>
-        <h2>Sell these first</h2>
+        <h2>ARC Raiders Selling Strategy: What to Sell First</h2>
+        <p>Managing your inventory in ARC Raiders is crucial for success. Knowing what to sell helps you maximize profits while keeping essential items for crafting and quests. Here's your complete guide to selling items efficiently in ARC Raiders.</p>
         <ul>
-          <li>Common crafting materials (if you have large stacks)</li>
-          <li>Duplicate low-rarity items not used in recipes</li>
-          <li>Items with low sell price and no 'Keep' flag</li>
+          <li><strong>Common crafting materials</strong> - If you have large stacks (20+) of common materials, sell excess amounts</li>
+          <li><strong>Duplicate low-rarity items</strong> - Items not used in recipes and not flagged for quests</li>
+          <li><strong>Items with low sell price and no 'Keep' flag</strong> - Safe to sell when you need space</li>
+          <li><strong>Damaged or broken items</strong> - Unless needed for specific recipes, these can usually be sold</li>
+          <li><strong>Decorative items</strong> - Snow globes, photographs, and collectibles without quest markers</li>
         </ul>
       </section>
 
       <section>
-        <h2>When to hold off selling</h2>
-        <p>Do not sell items flagged as 'Keep for Quests/Workshop' or rare components needed for crafting. If unsure, check this site's item details before selling.</p>
+        <h2>ARC Raiders Best Items to Sell for Profit</h2>
+        <p>Some items in ARC Raiders have high sell prices but aren't essential for progression. Focus on selling these high-value items that aren't marked for quests or workshops:</p>
+        <ul>
+          <li>Items with sell prices over 500 that have no crafting use</li>
+          <li>Rare decorative items found in the world</li>
+          <li>Excess keys after you've unlocked their corresponding areas</li>
+          <li>Enemy-specific drops you don't need for current recipes</li>
+        </ul>
+        <p>Check the dynamic list below for the top sellable items ranked by price.</p>
+      </section>
+
+      <section>
+        <h2>When NOT to Sell Items in ARC Raiders</h2>
+        <p>Do not sell items flagged as 'Keep for Quests/Workshop' or rare components needed for crafting advanced gear. Before selling any item in ARC Raiders, check this database's item details to verify it's not needed for:</p>
+        <ul>
+          <li>Active or future quest requirements</li>
+          <li>Workshop crafting recipes you plan to use</li>
+          <li>Arc Powercells, Arc Alloy, Arc Circuitry - essential high-tier materials</li>
+          <li>Any item with "needed_for" crafting relationships</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>ARC Raiders Inventory Management Tips</h2>
+        <p>Efficient inventory management in ARC Raiders means knowing what to keep and what to sell. Follow these tips:</p>
+        <ul>
+          <li>Regularly check your inventory against this database before vendor trips</li>
+          <li>Sort items by sell price in the database to identify high-value sellables</li>
+          <li>Keep at least 5-10 of any common crafting material for emergencies</li>
+          <li>Sell duplicates of unique items once you've completed their associated content</li>
+          <li>Use the search function above to quickly find specific items</li>
+        </ul>
       </section>
 
       <!-- FAQ JSON-LD placed at the bottom per instructions -->
@@ -181,13 +226,23 @@
         "mainEntity": [
           {
             "@type": "Question",
-            "name": "Is it safe to sell common materials?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Yes. Sell common materials when you have large stacks and don't need them for recipes or quests." }
+            "name": "What items should I sell in ARC Raiders?",
+            "acceptedAnswer": { "@type": "Answer", "text": "In ARC Raiders, sell common materials when you have large stacks (20+), duplicate low-rarity items not used in recipes, damaged or broken items without crafting value, and decorative items that aren't quest-related. Always check the 'Keep for Quests/Workshop' flag before selling." }
           },
           {
             "@type": "Question",
-            "name": "What should I never sell?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Never sell items labeled 'Keep for Quests/Workshop' or rare components needed for crafting advanced items." }
+            "name": "Is it safe to sell common materials in ARC Raiders?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Yes, you can safely sell common materials in ARC Raiders when you have large stacks and don't need them for immediate recipes or quests. Keep at least 5-10 of each common material for emergencies." }
+          },
+          {
+            "@type": "Question",
+            "name": "What should I never sell in ARC Raiders?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Never sell items labeled 'Keep for Quests/Workshop', rare components like Arc Powercells, Arc Alloy, or Arc Circuitry, or any item that shows up in the 'needed_for' crafting recipes. These are essential for progression." }
+          },
+          {
+            "@type": "Question",
+            "name": "What are the best items to sell for profit in ARC Raiders?",
+            "acceptedAnswer": { "@type": "Answer", "text": "The best items to sell in ARC Raiders are high-value items (500+ sell price) that aren't marked for quests/workshops and aren't used as crafting components. Check the database's dynamic list showing top sellable items ranked by price." }
           }
         ]
       }
@@ -214,12 +269,6 @@
         const normSlug = s => String(s||'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'')
         const candidates = (data || []).filter(it => {
           if (!it) return false
-          const keep = it['Keep for Quests/Workshop']
-          // exclude if Keep set (non-null/empty string)
-          if (keep !== null && keep !== undefined && String(keep).trim() !== '') return false
-          const needed = it.needed_for || it.neededFor
-          // exclude if used in crafting (has needed_for entries)
-          if (Array.isArray(needed) && needed.length) return false
           const price = Number(it['Sell Price'])
           return !Number.isNaN(price) && price > 0
         })
