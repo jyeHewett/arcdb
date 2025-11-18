@@ -1002,4 +1002,44 @@
     <priority>0.60</priority>
     <changefreq>monthly</changefreq>
   </url>
+  <url>
+    <loc>https://www.arcdb.site/items/microscope/</loc>
+    <priority>0.60</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.arcdb.site/items/sample-cleaner/</loc>
+    <priority>0.60</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.arcdb.site/items/frequency-modulator-box/</loc>
+    <priority>0.60</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.arcdb.site/items/rotary-encoder/</loc>
+    <priority>0.60</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.arcdb.site/items/flow-controller/</loc>
+    <priority>0.60</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.arcdb.site/items/ion-sputter/</loc>
+    <priority>0.60</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.arcdb.site/items/spectrum-analyzer/</loc>
+    <priority>0.60</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.arcdb.site/items/magnetron/</loc>
+    <priority>0.60</priority>
+    <changefreq>monthly</changefreq>
+  </url>
 </urlset>
